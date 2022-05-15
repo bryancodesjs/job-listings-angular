@@ -8,6 +8,7 @@ import { NewJobComponent } from './views/new-job/new-job.component';
 import { LoginComponent } from './views/login/login.component';
 import { FooterComponent } from './views/shared/footer/footer.component';
 import { HeaderComponent } from './views/shared/header/header.component';
+import { AdminPanelComponent } from './views/admin-panel/admin-panel.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HeaderComponent } from './views/shared/header/header.component';
     NewJobComponent,
     LoginComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,
