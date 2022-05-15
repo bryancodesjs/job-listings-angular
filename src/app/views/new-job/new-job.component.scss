@@ -35,3 +35,11 @@
 .block {
     margin-bottom: 1rem;
 }
+.form-group label {
+    &.danger {
+        color: #ff006c !important;
+    }
+}
+.card.sent {
+    min-width: 300px;
+}

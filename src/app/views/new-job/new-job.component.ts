@@ -13,7 +13,6 @@ export class NewJobComponent implements OnInit {
   jobSent = false;
 
   currentJob = {
-    key:  '',
     company: '',
     title:  '',
     category: '',
@@ -65,6 +64,12 @@ export class NewJobComponent implements OnInit {
   }
   //publish new job
   publish(){
+    //add publication date
+    var date = new Date();
+    this.currentJob.date = date.toLocaleDateString();
+    this.currentJob.requirements = this.requirementsInMemory;
+    this.currentJob.benefits = this.BenefitsInMemory;
+    this._jobservice.create(this.currentJob);
     this.resetSteps();
     this.jobSent = true;
   }
@@ -106,5 +111,50 @@ export class NewJobComponent implements OnInit {
   //remove benefit
   removeBenefit(index: number){
     this.BenefitsInMemory.splice(index, 1);
+  }
+  //validation variables
+  noTitle = false;
+  noCategory = false;
+  noType = false;
+  noCompany = false;
+  noLocation = false;
+  noLink = false;
+  noDescription = false;
+  //reset validation variables
+  resetValidations(){
+    this.noTitle = false;
+    this.noCategory = false;
+    this.noType = false;
+    this.noCompany = false;
+    this.noLocation = false;
+    this.noLink = false;
+    this.noDescription = false;
+  }
+  validateForm(){
+    this.resetValidations();
+    if(this.currentJob.title == ''){
+      this.noTitle = true;
+    } 
+    if (this.currentJob.category == '') {
+      this.noCategory = true;
+    } 
+    if (this.currentJob.type == ''){
+      this.noType = true;
+    }
+    if (this.currentJob.company == ''){
+      this.noCompany = true;
+    }
+    if (this.currentJob.location == ''){
+      this.noLocation = true;
+    }
+    if (this.currentJob.link == ''){
+      this.noLink = true;
+    }
+    if (this.currentJob.description == ''){
+      this.noDescription = true;
+    }
+    if(!this.noTitle && !this.noCategory && !this.noType && !this.noCompany && !this.noLink && !this.noLocation && !this.noDescription){
+      this.goStepTwo();
+    }
   }
 }
