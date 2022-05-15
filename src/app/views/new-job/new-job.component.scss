@@ -1,0 +1,29 @@
+.form-group {
+    margin-bottom: 1rem;
+}
+.step {
+    hr {
+        height: 3px;
+        background-color: #c0c0c0;
+    }
+    .label {
+        color: #c0c0c0;
+    }
+    .description {
+        color: #c0c0c0;
+    }
+    &.active {
+        .label {
+            color: dodgerblue;
+        }
+        hr {
+            background-color: dodgerblue;
+        }
+        .description {
+            color: dodgerblue;
+        }
+    }
+}
+.block {
+    margin-bottom: 1rem;
+}
