@@ -17,6 +17,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { environment } from 'src/environments/environment';
+import { CoursesComponent } from './views/courses/courses.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { environment } from 'src/environments/environment';
     FooterComponent,
     HeaderComponent,
     AdminPanelComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,
