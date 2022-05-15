@@ -15,3 +15,18 @@
         }
     }
 }
+//a round-btn must be a 'span' containing an <i> icon
+//example: <span class="round-btn danger"><i class="bi bi-x"></i></span>
+.round-btn {
+        width: 1.44rem;
+        height: 1.444rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 100%;
+    &.danger {
+        background-color: #ff006c;
+        color: white;
+    }
+}

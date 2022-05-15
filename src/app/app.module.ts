@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
@@ -10,7 +10,13 @@ import { FooterComponent } from './views/shared/footer/footer.component';
 import { HeaderComponent } from './views/shared/header/header.component';
 import { AdminPanelComponent } from './views/admin-panel/admin-panel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NotFoundComponent } from './views/not-found/not-found.component';
+//FIREBASE MODULES
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
+import { environment } from 'src/environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,12 +25,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     FooterComponent,
     HeaderComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

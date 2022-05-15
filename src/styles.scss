@@ -9,3 +9,12 @@ input, select, .card {
 }
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+.console {
+    color: lightgreen;
+    position: fixed;
+    top: 300px;
+    right: 10px;
+    width: 200px;
+    font-family: monospace !important;
+}

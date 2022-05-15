@@ -3,6 +3,7 @@
         <div *ngIf="!jobSent" class="row text-center pt-5 pb-5">
             <div class="col-md-8 offset-md-2">
                 <h2><strong>Post a New Job</strong></h2>
+                <h5>and get talented applicants in seconds</h5>
                 <div class="row mt-5">
                     <div [class]="stepOne? 'col-4 step active' : 'col-4 step'">
                         <h5 class="label"><strong>Step 1</strong></h5>
@@ -29,30 +30,40 @@
                     <h5 *ngIf="stepOne" class="float-start mb-0"><strong>Position details</strong></h5>
                     <h5 *ngIf="stepTwo" class="float-start mb-0"><strong>Preview New Job</strong></h5>
                 </div>
+                <!-- step one-->
                 <div *ngIf="stepOne" class="card">
                     <div class="card-body">
                         <div class="form">
                             <div class="form-group">
                                 <label for="">Job Title</label>
-                                <input type="text" class="form-control">
+                                <input [(ngModel)]="currentJob.title" type="text" class="form-control">
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="">Category</label>
-                                        <select name="" id="" class="form-select">
-                                            <option value="">Category 1</option>
-                                            <option value="">Category 2</option>
+                                        <label>Category</label>
+                                        <select [(ngModel)]="currentJob.category" class="form-select">
+                                            <option selected value="1">Design</option>
+                                            <option value="2">Full-Stack Programming</option>
+                                            <option value="17">Front-End Programming</option>
+                                            <option value="18">Back-End Programming</option>
+                                            <option value="7">Customer Support</option>
+                                            <option value="6">DevOps and Sysadmin</option>
+                                            <option value="9">Sales and Marketing</option>
+                                            <option value="3">Management and Finance</option>
+                                            <option value="11">Product</option>
+                                            <option value="4">All Other Remote</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="">Job Type</label>
-                                        <select name="" id="" class="form-select">
-                                            <option value="">Full-time</option>
-                                            <option value="">Part-time</option>
-                                            <option value="">Freelance</option>
+                                        <label>Job Type</label>
+                                        <select [(ngModel)]="currentJob.type" class="form-select">
+                                            <option value="1">Full-time</option>
+                                            <option value="2">Part-time</option>
+                                            <option value="3">Freelance</option>
+                                            <option value="4">Contract</option>
                                         </select>
                                     </div>
                                 </div>
@@ -62,7 +73,7 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="isremote" checked>
+                                            <input (click)="remote(true)" class="form-check-input" type="radio" name="flexRadioDefault" id="isremote" checked>
                                             <label class="form-check-label" for="isremote">
                                             Yes
                                             </label>
@@ -70,7 +81,7 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="isnotremote">
+                                            <input (click)="remote(false)" class="form-check-input" type="radio" name="flexRadioDefault" id="isnotremote">
                                             <label class="form-check-label" for="isnotremote">
                                             No
                                             </label>
@@ -81,11 +92,44 @@
                             <div class="form-group">
                                 <h5><strong>Application link or email</strong></h5>
                                 <label for="">Link to application page or email address</label>
-                                <input type="email" class="form-control">
+                                <input [(ngModel)]="currentJob.link" type="text" class="form-control">
                             </div>
                             <div class="form-group">
                                 <h5><strong>Job description</strong></h5>
-                                <textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
+                                <textarea [(ngModel)]="currentJob.description" class="form-control" name="" id="" cols="30" rows="5"></textarea>
+                            </div>
+                            <!-- job requirements -->
+                            <hr>
+                            <div class="form-group">
+                                <h5>Job Requirements</h5>
+                                <label for="" class="text-muted">Write a requirement and press *Enter or click on <em>Add requirement</em></label>
+                                <div class="input-group">
+                                    <input (keyup.enter)="addRequirement()" [(ngModel)]="newRequirement" type="text" class="form-control form-control sm">
+                                    <button class="btn btn-sm secondary" (click)="addRequirement()">Add Requirement <i class="bi bi-plus-lg"></i></button>
+                                </div>
+                                <!-- list of requirements -->
+                                <ul class="list-group list-group-flush mt-3">
+                                    <li *ngFor="let req of requirementsInMemory , let i = index" class="list-group-item">{{req.name}} 
+                                        <span class="ms-4">
+                                            <span class="round-btn danger" (click)="removeRequirement(i)">
+                                                <i class="bi bi-x"></i>
+                                            </span>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <hr>
+                            <div class="form-group">
+                                <h5>Job Benefits</h5>
+                                <label for="" class="text-muted">Write a benefit and press *Enter or click on <em>Add benefit</em></label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control form-control sm">
+                                    <button class="btn btn-sm secondary">Add Benefit <i class="bi bi-plus-lg"></i></button>
+                                </div>
+                                <!-- list of requirements -->
+                                <ul class="list-group list-group-flush mt-3">
+                                    <li class="list-group-item">An item <span class="ms-4"><span class="round-btn danger"><i class="bi bi-x"></i></span></span></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -117,6 +161,18 @@
                                 consequuntur omnis, est repellat quis nisi, sed quos.
                             </p>
                         </div>
+                        <div class="block">
+                            <label for="">Job Requirements</label>
+                            <ul>
+                                <li>Requirement</li>
+                            </ul>
+                        </div>
+                        <div class="block">
+                            <label for="">Job Benefits</label>
+                            <ul>
+                                <li>Requirement</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div *ngIf="jobSent" class="d-flex align-items-center justify-content-center flex-column">
@@ -144,6 +200,22 @@
                     <button class="btn primary float-end" (click)="publish()">Final Step: Publish</button>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="console">
+    <div class="card bg-dark">
+        <div class="card-body">
+            <p>{{currentJob.title}}</p>
+            <p>{{currentJob.category}}</p>
+            <p>{{currentJob.type}}</p>
+            <p>{{currentJob.isremote}}</p>
+            <p>{{currentJob.link}}</p>
+            <p>{{currentJob.description}}</p>
+            <!-- <ul>
+                <li *ngFor="let req of currentJob.requirements">{{req.name}}</li>
+            </ul> -->
         </div>
     </div>
 </div>

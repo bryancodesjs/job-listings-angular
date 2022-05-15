@@ -6,9 +6,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'job-listings-angular';
-  ngOnInit(): void {
-    
-    //document.querySelectorAll('[data-bs-toggle="tooltip"]').tooltip();   
-  
-  }
 }
