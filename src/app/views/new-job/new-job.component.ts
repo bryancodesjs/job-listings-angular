@@ -23,7 +23,7 @@ export class NewJobComponent implements OnInit {
     requirements: [{}],
     benefits: [{}],
     date: '',
-    published: false,
+    published: true,
     location: ''
   }
 

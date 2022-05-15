@@ -19,16 +19,21 @@
                         </select>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" *ngFor="let job of activeJobs">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <h5>Company</h5>
-                                <h4><strong>Position - Remote</strong></h4>
-                                <p class="mb-0">Job Type / Location</p>
+                                <h5>{{job.company}}</h5>
+                                <h4>
+                                    <strong>{{job.title}} - 
+                                        <span *ngIf="job.isremote"> Remoto</span>
+                                        <span *ngIf="!job.isremote"> Presencial</span>
+                                    </strong>
+                                </h4>
+                                <p class="mb-0">{{job.type}} / {{job.location}}</p>
                             </div>
                             <div class="col-md-3 d-flex align-items-center justify-content-end">
-                                <p class="mb-0">March 4, 2022</p>
+                                <p class="mb-0">{{job.date}}</p>
                             </div>
                             <div class="col-md-3 d-flex align-items-center justify-content-end">
                                 <button class="btn primary">Apply</button>
