@@ -9,6 +9,7 @@ import { LoginComponent } from './views/login/login.component';
 import { FooterComponent } from './views/shared/footer/footer.component';
 import { HeaderComponent } from './views/shared/header/header.component';
 import { AdminPanelComponent } from './views/admin-panel/admin-panel.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AdminPanelComponent } from './views/admin-panel/admin-panel.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
