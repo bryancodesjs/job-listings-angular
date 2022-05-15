@@ -104,13 +104,13 @@
                                 <h5>Job Requirements</h5>
                                 <label for="" class="text-muted">Write a requirement and press *Enter or click on <em>Add requirement</em></label>
                                 <div class="input-group">
-                                    <input (keyup.enter)="addRequirement()" [(ngModel)]="newRequirement" type="text" class="form-control form-control sm">
+                                    <input (keyup.enter)="addRequirement()" [(ngModel)]="newRequirement" type="text" class="form-control form-control">
                                     <button class="btn btn-sm secondary" (click)="addRequirement()">Add Requirement <i class="bi bi-plus-lg"></i></button>
                                 </div>
                                 <!-- list of requirements -->
                                 <ul class="list-group list-group-flush mt-3">
                                     <li *ngFor="let req of requirementsInMemory , let i = index" class="list-group-item">{{req.name}} 
-                                        <span class="ms-4">
+                                        <span class="ms-4" placement="top" ngbTooltip="Remove this requirement">
                                             <span class="round-btn danger" (click)="removeRequirement(i)">
                                                 <i class="bi bi-x"></i>
                                             </span>
@@ -123,12 +123,18 @@
                                 <h5>Job Benefits</h5>
                                 <label for="" class="text-muted">Write a benefit and press *Enter or click on <em>Add benefit</em></label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control form-control sm">
-                                    <button class="btn btn-sm secondary">Add Benefit <i class="bi bi-plus-lg"></i></button>
+                                    <input (keyup.enter)="addBenefit()" [(ngModel)]="newBenefit" type="text" class="form-control form-control">
+                                    <button class="btn btn-sm secondary" (click)="addBenefit()">Add Benefit <i class="bi bi-plus-lg"></i></button>
                                 </div>
                                 <!-- list of requirements -->
                                 <ul class="list-group list-group-flush mt-3">
-                                    <li class="list-group-item">An item <span class="ms-4"><span class="round-btn danger"><i class="bi bi-x"></i></span></span></li>
+                                    <li *ngFor="let ben of BenefitsInMemory, let i = index" class="list-group-item">{{ben.name}} 
+                                        <span class="ms-4" placement="top" ngbTooltip="Remove this benefit">
+                                            <span class="round-btn danger" (click)="removeBenefit(i)">
+                                                <i class="bi bi-x"></i>
+                                            </span>
+                                        </span>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

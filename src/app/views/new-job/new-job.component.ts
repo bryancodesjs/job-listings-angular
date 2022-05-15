@@ -21,12 +21,19 @@ export class NewJobComponent implements OnInit {
     link: '',
     description: '',
     requirements: [{}],
-    benefits: {},
+    benefits: [{}],
     date: '',
     published: false,
     locoation: ''
   }
-  benefits = {}
+
+  //states for benefits
+  newBenefit = '';
+  singleBenefit = {
+    name: ''
+  }
+  BenefitsInMemory: any[] = [];
+
   //states for requirements
   newRequirement = '';
   singleRequirement = {
@@ -83,6 +90,16 @@ export class NewJobComponent implements OnInit {
   //remove a requirement from memory
   removeRequirement(index: number){
     this.requirementsInMemory.splice(index, 1);
-    //console.log(index);
+  }
+  //add benefit
+  addBenefit(){
+    this.singleBenefit.name = this.newBenefit;
+    this.newBenefit = ''; //reset new benefit
+    this.BenefitsInMemory.push(this.singleBenefit);
+    this.singleBenefit = {name: ''}; //reset single benefit
+  }
+  //remove benefit
+  removeBenefit(index: number){
+    this.BenefitsInMemory.splice(index, 1);
   }
 }
