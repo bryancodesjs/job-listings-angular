@@ -69,6 +69,11 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <h5>Company / Advertiser</h5>
+                                <label>The company, agency or recruiter that the applicant will contact</label>
+                                <input [(ngModel)]="currentJob.company" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
                                 <h5><strong>Is this role remote?</strong></h5>
                                 <div class="row">
                                     <div class="col-sm-4">
@@ -90,6 +95,16 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <h5>Job Location</h5>
+                                <select [(ngModel)]="currentJob.location" class="form-select">
+                                    <option value="1" selected>Santo Domingo</option>
+                                    <option value="2">Santiago</option>
+                                    <option value="3">Bavaro</option>
+                                    <option value="4">La Romana</option>
+                                    <option value="0">Otro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <h5><strong>Application link or email</strong></h5>
                                 <label for="">Link to application page or email address</label>
                                 <input [(ngModel)]="currentJob.link" type="text" class="form-control">
@@ -104,7 +119,7 @@
                                 <h5>Job Requirements</h5>
                                 <label for="" class="text-muted">Write a requirement and press *Enter or click on <em>Add requirement</em></label>
                                 <div class="input-group">
-                                    <input (keyup.enter)="addRequirement()" [(ngModel)]="newRequirement" type="text" class="form-control form-control">
+                                    <input (keyup.enter)="addRequirement()" [(ngModel)]="newRequirement" type="text" class="form-control">
                                     <button class="btn btn-sm secondary" (click)="addRequirement()">Add Requirement <i class="bi bi-plus-lg"></i></button>
                                 </div>
                                 <!-- list of requirements -->
@@ -144,39 +159,49 @@
                     <div class="card-body">
                         <div class="block">
                             <label for="">Job Title</label>
-                            <h4><strong>Front End Developer - Remote</strong></h4>
+                            <h4>
+                                <strong>{{currentJob.title}} - 
+                                    <span *ngIf="currentJob.isremote">Remote</span>
+                                    <span *ngIf="!currentJob.isremote">On site</span>
+                                </strong>
+                            </h4>
                         </div>
                         <div class="block">
                             <label for="">Category</label>
-                            <h5 class="mb-3">Software Engineering</h5>
+                            <h5 class="mb-3">{{currentJob.category}}</h5>
                         </div>
                         <div class="block">
                             <label for="">Job Type</label>
-                            <h5><i class="bi bi-clock-history"></i> Full-time</h5>
+                            <h5><i class="bi bi-clock-history"></i> {{currentJob.type}}</h5>
+                        </div>
+                        <div class="block">
+                            <label>Company / Advertiser</label>
+                            <h5>{{currentJob.company}}</h5>
+                        </div>
+                        <div class="block">
+                            <label>Location</label>
+                            <h5>{{currentJob.location}}</h5>
                         </div>
                         <div class="block">
                             <label for="">Application link or email</label>
-                            <h5>https://google.com</h5>
+                            <h5>{{currentJob.link}}</h5>
                         </div>
                         <div class="block">
                             <label for="">Job Description</label>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas atque perferendis 
-                                fugit quis, enim veritatis voluptate sed quo! Temporibus velit nostrum iusto. 
-                                Aperiam optio animi laudantium ipsam similique error eum corrupti autem 
-                                consequuntur omnis, est repellat quis nisi, sed quos.
+                                {{currentJob.description}}
                             </p>
                         </div>
                         <div class="block">
                             <label for="">Job Requirements</label>
                             <ul>
-                                <li>Requirement</li>
+                                <li *ngFor="let req of requirementsInMemory">{{req.name}}</li>
                             </ul>
                         </div>
                         <div class="block">
                             <label for="">Job Benefits</label>
                             <ul>
-                                <li>Requirement</li>
+                                <li *ngFor="let ben of BenefitsInMemory">{{ben.name}}</li>
                             </ul>
                         </div>
                     </div>

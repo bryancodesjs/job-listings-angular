@@ -1,5 +1,6 @@
 export interface Job {
     key?: string | null;
+    company?: string;
     title?: string;
     category?:string;
     type?:string;

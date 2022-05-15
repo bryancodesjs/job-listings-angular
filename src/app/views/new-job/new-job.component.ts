@@ -14,6 +14,7 @@ export class NewJobComponent implements OnInit {
 
   currentJob = {
     key:  '',
+    company: '',
     title:  '',
     category: '',
     type: '',
@@ -24,7 +25,7 @@ export class NewJobComponent implements OnInit {
     benefits: [{}],
     date: '',
     published: false,
-    locoation: ''
+    location: ''
   }
 
   //states for benefits
@@ -82,10 +83,12 @@ export class NewJobComponent implements OnInit {
   }
   //add requirement
   addRequirement(){
-    this.singleRequirement.name = this.newRequirement;
-    this.newRequirement = ''; //reset new requirement
-    this.requirementsInMemory.push(this.singleRequirement);
-    this.singleRequirement = {name: ''}; //reset single requirement
+    if(this.newRequirement != ''){
+      this.singleRequirement.name = this.newRequirement;
+      this.newRequirement = ''; //reset new requirement
+      this.requirementsInMemory.push(this.singleRequirement);
+      this.singleRequirement = {name: ''}; //reset single requirement
+    }
   }
   //remove a requirement from memory
   removeRequirement(index: number){
@@ -93,10 +96,12 @@ export class NewJobComponent implements OnInit {
   }
   //add benefit
   addBenefit(){
-    this.singleBenefit.name = this.newBenefit;
-    this.newBenefit = ''; //reset new benefit
-    this.BenefitsInMemory.push(this.singleBenefit);
-    this.singleBenefit = {name: ''}; //reset single benefit
+    if(this.newBenefit != ''){
+      this.singleBenefit.name = this.newBenefit;
+      this.newBenefit = ''; //reset new benefit
+      this.BenefitsInMemory.push(this.singleBenefit);
+      this.singleBenefit = {name: ''}; //reset single benefit
+    }
   }
   //remove benefit
   removeBenefit(index: number){
