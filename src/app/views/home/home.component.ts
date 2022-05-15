@@ -8,10 +8,13 @@ import { map } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
   activeJobs: any = [];
+  todaysDate = new Date().toLocaleDateString();
+  
   constructor(private _JobService: JobServiceService) { }
 
   ngOnInit(): void {
     this.retrieveAll();
+    console.log(this.todaysDate);
   }
 
   retrieveAll(){
@@ -24,6 +27,7 @@ export class HomeComponent implements OnInit {
       var filtered = toFilter.filter(a => a.published == true);
       //console.log(filtered);
       this.activeJobs = filtered;
+      this.activeJobs.reverse();
     });
   }
 }

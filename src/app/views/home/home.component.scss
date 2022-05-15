@@ -5,4 +5,19 @@
     &:hover {
         background-color: #f1f5ff;
     }
+    &.new {
+        background-color: #ffd50033;
+        .badge.new {
+            background-color: #ffd500;
+            color: #4d5154;
+        }
+        .highlight-bar {
+            float: right;
+            position: absolute;
+            border-left: 4px solid #ffd500;
+            height: 90%;
+            right: -10px;
+            top: 5%;
+        }
+    }
 }

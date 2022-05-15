@@ -2,24 +2,23 @@
     <div class="container">
         <div class="row text-center p-5">
             <div class="col-md-8 offset-md-2">
-                <h2><strong>We work remotely</strong></h2>
-                <p>
-                    We Work Remotely is the <strong>largest remote work community in the world.</strong> With over 3M visitors, 
-                    WWR is the number one destination to find and list incredible remote jobs.
-                </p>
+                <h2><strong>Encuentra ese trabajo que deseas</strong></h2>
+                <h4>
+                    Magnet es el lugar donde el talento y las empresas se atraen y conectan.
+                </h4>
             </div>
         </div>
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="d-flex justify-content-between mb-4 ">
-                    <h5 class="float-start mb-0"><strong>Jobs</strong></h5>
+                    <h5 class="float-start mb-0"><strong>Empleos</strong></h5>
                     <div>
                         <select name="" id="" class="form-select float-end mb-2">
-                            <option value="">More recent</option>
+                            <option value="">Mas recientes</option>
                         </select>
                     </div>
                 </div>
-                <div class="card" *ngFor="let job of activeJobs">
+                <div *ngFor="let job of activeJobs" [class]="job.date == todaysDate? 'card new' : 'card'">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">
@@ -36,8 +35,9 @@
                                 <p class="mb-0">{{job.date}}</p>
                             </div>
                             <div class="col-md-3 d-flex align-items-center justify-content-end">
-                                <button class="btn primary">Apply</button>
+                                <span class="badge new"><strong>NUEVO</strong></span>
                             </div>
+                            <div class="highlight-bar"></div>
                         </div>
                     </div>
                 </div>
