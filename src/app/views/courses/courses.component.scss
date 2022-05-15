@@ -1,0 +1,34 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 1.5rem;
+    column-gap: 1.5rem;
+    .card {
+        transform: translate(10px,0px);
+        background-color: #fff !important;
+        transition: 0.2s ease;
+        cursor: pointer;
+        &-body {
+            background-color: white;
+        }
+        &::before {
+            content: "   ";
+            width: 100%;
+            height: 100%;
+            background-color: #092754;
+            transform: translate(-10px,10px);
+            transition: 0.2s ease;
+            position: absolute;
+            z-index: -1;
+
+        }
+        &:hover {
+            transform: translate(0px,10px);
+            transition: 0.2s ease;
+            &::before {
+                transform: translate(0px,0px);
+                transition: 0.2s ease;
+            }
+        }
+    }
+}
