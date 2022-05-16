@@ -1,10 +1,10 @@
 <div class="container-fluid">
-    <div class="container">
+    <div class="container animate__animated animate__fadeIn">
         <div *ngIf="!jobSent" class="row text-center pt-5 pb-5">
             <div class="col-md-12 col-lg-9 mx-auto">
                 <h2><strong>Publique un Trabajo</strong></h2>
                 <h5>y reciba solicitudes de aplicantes talentosos</h5>
-                <div class="row mt-5">
+                <div class="row mt-5 animate__animated animate__fadeInUp">
                     <div [class]="stepOne? 'col-4 step active' : 'col-4 step'">
                         <h5 class="label"><strong>Paso 1</strong></h5>
                         <hr>
@@ -24,7 +24,7 @@
                 <!--     -->
             </div>
         </div>
-        <div class="row">
+        <div class="row animate__animated animate__fadeInUp">
             <div class="col-md-12 col-lg-9 mx-auto">
                 <div class="d-flex justify-content-between mb-4 ">
                     <h5 *ngIf="stepOne" class="float-start mb-0"><strong>Detalles de Posición</strong></h5>

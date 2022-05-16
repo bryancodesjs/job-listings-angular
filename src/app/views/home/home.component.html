@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <div class="container">
+    <div class="container animate__animated animate__fadeIn">
         <div class="row text-center p-5">
             <div class="col-md-12 col-lg-9 mx-auto">
                 <h2><strong>Encuentra ese trabajo que deseas</strong></h2>
@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 col-lg-9 mx-auto">
+            <div class="col-md-12 col-lg-9 mx-auto animate__animated animate__fadeInUp">
                 <div class="d-flex justify-content-between mb-4 ">
                     <h4 class="float-start mb-0"><strong>Empleos</strong></h4>
                     <div>
@@ -18,7 +18,7 @@
                         </select>
                     </div>
                 </div>
-                <div *ngFor="let job of activeJobs" [class]="job.date == todaysDate? 'card new' : 'card'">
+                <div *ngFor="let job of activeJobs" [class]="job.date == todaysDate? 'card new' : 'card'" routerLink="/job/{{job.key}}">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">

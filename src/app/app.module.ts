@@ -18,6 +18,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { environment } from 'src/environments/environment';
 import { CoursesComponent } from './views/courses/courses.component';
+import { AboutComponent } from './views/about/about.component';
+import { JobComponent } from './views/job/job.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,9 @@ import { CoursesComponent } from './views/courses/courses.component';
     HeaderComponent,
     AdminPanelComponent,
     NotFoundComponent,
-    CoursesComponent
+    CoursesComponent,
+    AboutComponent,
+    JobComponent
   ],
   imports: [
     BrowserModule,
