@@ -1,7 +1,23 @@
 <div class="container-fluid">
     <div class="container animate__animated animate__fadeIn">
         <div class="row pt-5 pb-5">
-            <div class="col-md-12 col-lg-9 mx-auto">
+            <div class="col-md-12 col-lg-9 mx-auto" *ngIf="notFound && loading">
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                </div>
+            </div>
+            <!-- job not found-->
+            <div class="col-md-12 col-lg-9 mx-auto" *ngIf="notFound && !loading">
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                    <img width="100" src="/assets/img/undraw_the_search_s0xf.svg" alt="imagen que representa que la publicación no fue encontrada">
+                    <h1>Oooops</h1>
+                    <h5>La publicación que buscas no esta disponible o no existe</h5>
+                    <button class="btn primary mt-4" routerLink="/">Ir al portal principal</button>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-9 mx-auto" *ngIf="!notFound && !loading">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item"><a href="#"><i class="bi bi-chevron-left"></i> Volver al listado de empleos</a></li>
@@ -45,8 +61,10 @@
                             <div class="card">
                                 <div class="card-body bg-light">
                                     <small class="text-muted text-uppercase">Anunciante</small>
-                                    <h5 class="mb-4">Amazon Web Services</h5>
+                                    <h5 class="mb-4">{{job.company}}</h5>
                                     <button class="btn primary w-100">Aplicar</button>
+                                    <br>
+                                    
                                 </div>
                             </div>
                         </div>  

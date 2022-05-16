@@ -10,6 +10,8 @@ import { map } from 'rxjs/operators';
 export class JobComponent implements OnInit {
   id:any = '';
   job: any = [];
+  notFound = true;
+  loading = true;
   constructor(private _activatedRoute: ActivatedRoute, private _JobService: JobServiceService) { }
 
   ngOnInit(): void {
@@ -32,7 +34,13 @@ export class JobComponent implements OnInit {
       var filtered = toFilter.filter(a => a.key == this.id);
       //console.log(filtered);
       this.job = filtered[0];
-      console.log(this.job);
+      if(this.job == undefined){
+        this.notFound = true;
+        this.loading = false;
+      } else {
+        this.notFound = false;
+        this.loading = false;
+      }
     });
   }
 }

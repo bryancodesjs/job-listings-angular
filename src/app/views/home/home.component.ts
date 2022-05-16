@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.retrieveAll();
-    console.log(this.todaysDate);
   }
 
   retrieveAll(){
