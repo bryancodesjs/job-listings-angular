@@ -10,12 +10,7 @@
             </div>
             <!-- job not found-->
             <div class="col-md-12 col-lg-9 mx-auto" *ngIf="notFound && !loading">
-                <div class="d-flex justify-content-center align-items-center flex-column">
-                    <img width="100" src="/assets/img/undraw_the_search_s0xf.svg" alt="imagen que representa que la publicación no fue encontrada">
-                    <h1>Oooops</h1>
-                    <h5>La publicación que buscas no esta disponible o no existe</h5>
-                    <button class="btn primary mt-4" routerLink="/">Ir al portal principal</button>
-                </div>
+                <app-not-found></app-not-found>
             </div>
             <div class="col-md-12 col-lg-9 mx-auto" *ngIf="!notFound && !loading">
                 <nav aria-label="breadcrumb">
