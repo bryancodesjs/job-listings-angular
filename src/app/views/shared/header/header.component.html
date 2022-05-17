@@ -1,28 +1,34 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img width="100" src="/assets/logo.webp" alt="">
+      <a class="navbar-brand" routerLink="/">
+        <img width="100" src="/assets/logo.webp" alt="Magnet website logo">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navcollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navcollapse">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-          </li>
-          <li class="nav-item" placement="bottom" ngbTooltip="Aumenta tu salario aprendiendo las habilidades mas demandadas">
-            <a class="nav-link" routerLink="courses">Cursos <i class="bi bi-lightning-charge-fill text-primary"></i></a>
+            <a class="nav-link" routerLink="/" data-bs-toggle="collapse" data-bs-target="#navcollapse">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/about">Sobre Magnet</a>
+            <a 
+            class="nav-link" 
+            routerLink="courses" 
+            placement="bottom" 
+            ngbTooltip="Aumenta tu salario aprendiendo las habilidades mas demandadas" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navcollapse">Cursos <i class="bi bi-lightning-charge-fill text-primary"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="about" data-bs-toggle="collapse" data-bs-target="#navcollapse">Sobre Magnet</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" routerLink="admin-panel">Mi Cuenta</a>
           </li>  -->
         </ul>
         
-        <button class="btn primary btn-sm" routerLink="new-job">Publica un trabajo</button>
+        <button class="btn primary btn-sm" routerLink="new-job" data-bs-toggle="collapse" data-bs-target="#navcollapse">Publica un trabajo</button>
         <ul class="navbar-nav">
           <li class="nav-item" ngbDropdown>
             <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown2" role="button">
