@@ -11,14 +11,18 @@ export class NewJobComponent implements OnInit {
   stepOne = true;
   stepTwo = false;
   jobSent = false;
+  //variable to indicate whether email or link was chosen as contact method
+  emailChosen = false;
 
   currentJob = {
+    author: <any>'',
     company: '',
     title:  '',
     category: '',
     type: '',
     isremote: true,
     link: '',
+    email: '',
     description: '',
     requirements: [{}],
     benefits: [{}],
@@ -66,6 +70,7 @@ export class NewJobComponent implements OnInit {
   publish(){
     //add publication date
     var date = new Date();
+    this.currentJob.author = localStorage.getItem('magnetUserRef');
     this.currentJob.date = date.toLocaleDateString();
     this.currentJob.requirements = this.requirementsInMemory;
     this.currentJob.benefits = this.BenefitsInMemory;
@@ -119,6 +124,7 @@ export class NewJobComponent implements OnInit {
   noCompany = false;
   noLocation = false;
   noLink = false;
+  noEmail = false;
   noDescription = false;
   //reset validation variables
   resetValidations(){
@@ -155,6 +161,22 @@ export class NewJobComponent implements OnInit {
     }
     if(!this.noTitle && !this.noCategory && !this.noType && !this.noCompany && !this.noLink && !this.noLocation && !this.noDescription){
       this.goStepTwo();
+    }
+  }
+  chooseContactMethod(str: string){
+    switch(str){
+      case 'email':
+        console.log('you chose email')
+        this.emailChosen = true;
+        break;
+      case 'link':
+        console.log('you chose link')
+        this.emailChosen = false;
+        break;
+      default:
+        console.log('default')
+        this.emailChosen = false;
+        break;
     }
   }
 }

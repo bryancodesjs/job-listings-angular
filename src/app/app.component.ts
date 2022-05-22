@@ -24,5 +24,6 @@ export class AppComponent {
 
   signOut() {
     this.auth.signOut();
+    localStorage.removeItem('magnetUserRef');
   }
 }

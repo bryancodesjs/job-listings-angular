@@ -21,3 +21,14 @@ input, select, .card {
 .fast {
     animation-duration: 0.2s !important;
 }
+body, html {
+    height: 100%;
+}
+app-root {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+app-admin-panel, app-login{
+    flex: 1;
+}

@@ -19,7 +19,7 @@ export class AuthService {
       this.invalidLogin = false;
     })
     .catch(err => {
-      console.log('Something is wrong: ', err.message);
+      //console.log('Something is wrong: ', err.message);
       this.invalidLogin = true;
     })
   }

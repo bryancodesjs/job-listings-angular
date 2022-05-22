@@ -21,6 +21,8 @@ import { CoursesComponent } from './views/courses/courses.component';
 import { AboutComponent } from './views/about/about.component';
 import { JobComponent } from './views/job/job.component';
 import { CookiesComponent } from './views/shared/cookies/cookies.component';
+import { MyJobsComponent } from './views/admin-panel/my-jobs/my-jobs.component';
+;
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,8 @@ import { CookiesComponent } from './views/shared/cookies/cookies.component';
     CoursesComponent,
     AboutComponent,
     JobComponent,
-    CookiesComponent
+    CookiesComponent,
+    MyJobsComponent
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@ export class CookiesComponent implements OnInit {
   }
   checkCookies(){
     const consent = localStorage.getItem('magnetCookieConsent');
-    console.log(consent);
+    //console.log(consent);
     if(consent != null){
       this.showCookieForm = false;
     } else {
