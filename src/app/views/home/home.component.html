@@ -8,7 +8,11 @@
                 </h4>
             </div>
         </div>
-        <div class="row">
+        <div class="d-flex justify-content-center" *ngIf="activeJobs.length == 0">
+            <div class="spinner-border" role="status">
+            </div>
+        </div>
+        <div class="row" *ngIf="activeJobs.length != 0">
             <div class="col-md-12 col-lg-9 mx-auto animate__animated animate__fadeInUp">
                 <div class="d-flex justify-content-between mb-4 ">
                     <h4 class="float-start mb-0"><strong>Empleos</strong></h4>

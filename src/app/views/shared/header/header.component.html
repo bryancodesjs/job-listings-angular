@@ -27,16 +27,22 @@
             <a class="nav-link" routerLink="admin-panel">Mi Cuenta</a>
           </li>  -->
         </ul>
-        
-        <button class="btn primary btn-sm" routerLink="new-job" data-bs-toggle="collapse" data-bs-target="#navcollapse">Publica un trabajo</button>
-        <ul class="navbar-nav">
+        <button class="btn primary btn-sm" routerLink="login"*ngIf="!(auth.userData | async)">Iniciar Sesión</button>
+        <button 
+        class="btn primary btn-sm" 
+        routerLink="new-job" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navcollapse"
+        *ngIf="auth.userData | async"
+        >Publica un trabajo</button>
+        <ul class="navbar-nav" *ngIf="auth.userData | async">
           <li class="nav-item" ngbDropdown>
             <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown2" role="button">
               Mi Perfil
             </a>
             <div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu dropdown-menu-start animate__animated animate__fadeInDown fast">
               <a ngbDropdownItem routerLink="admin-panel">Panel Administrativo</a>
-              <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Cerrar Sesión</a>
+              <a ngbDropdownItem (click)="signOut()">Cerrar Sesión</a>
             </div>
           </li>
         </ul>

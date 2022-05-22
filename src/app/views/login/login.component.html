@@ -1,1 +1,40 @@
-<p>login works!</p>
+<div class="container-fluid animate__animated animate__fadeIn">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="text-center mt-5">Panel Administrativo</h3>
+            <h3 class="text-center mt-3"><strong>Iniciar Sesión</strong></h3>
+            <div class="card login-card mx-auto mb-5 mt-5 animate__animated animate__fadeInUp">
+                <div class="card-body">
+                    <div class="form-group mb-3" *ngIf="error">
+                        <div class="alert alert-danger" role="alert">
+                            Algunos datos son incorrectos, porfavor intente otra vez.
+                          </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Correo Electrónico</label>
+                        <input [(ngModel)]="email" type="text" class="form-control" *ngIf="!loading">
+                        <input [(ngModel)]="email" type="text" class="form-control" disabled *ngIf="loading">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label>Contraseña</label>
+                        <input [(ngModel)]="password" type="password" class="form-control" *ngIf="!loading">
+                        <input [(ngModel)]="password" type="password" class="form-control" disabled *ngIf="loading">
+                    </div>
+                    <div class="form-group mb-3">
+                        <button class="btn primary w-100" (click)="signIn()">
+                            <span *ngIf="!loading">Iniciar Sesión</span>
+                            <span *ngIf="loading">
+                                <div class="spinner-border spinner-border-sm text-light" role="status">
+                                  </div>
+                                  <span class="ms-2">Ingresando...</span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <a href="" class="">Olvidé mi contraseña</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
