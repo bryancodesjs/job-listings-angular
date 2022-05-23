@@ -16,6 +16,7 @@ export class NewJobComponent implements OnInit {
 
   currentJob = {
     author: <any>'',
+    visits: 0,
     company: '',
     title:  '',
     category: '',
@@ -28,7 +29,8 @@ export class NewJobComponent implements OnInit {
     benefits: [{}],
     date: '',
     published: true,
-    location: ''
+    location: '',
+    status: true
   }
 
   //states for benefits
@@ -134,6 +136,7 @@ export class NewJobComponent implements OnInit {
     this.noCompany = false;
     this.noLocation = false;
     this.noLink = false;
+    this.noEmail = false;
     this.noDescription = false;
   }
   validateForm(){
@@ -153,8 +156,16 @@ export class NewJobComponent implements OnInit {
     if (this.currentJob.location == ''){
       this.noLocation = true;
     }
-    if (this.currentJob.link == ''){
-      this.noLink = true;
+    //choose whether to validate link or email
+    if(this.emailChosen){
+      if(this.currentJob.email == ''){
+        this.noEmail = true;
+      }
+    } else {
+      //if email input wasn't chosen, the link will be validated
+      if (this.currentJob.link == ''){
+        this.noLink = true;
+      }
     }
     if (this.currentJob.description == ''){
       this.noDescription = true;

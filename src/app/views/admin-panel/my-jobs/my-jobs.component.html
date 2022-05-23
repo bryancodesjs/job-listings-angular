@@ -1,30 +1,35 @@
 
-<div class="card mb-3">
+<h5 class="mb-4"><strong>Mis Vacantes ({{activeJobs.length}})</strong></h5>
+<div class="card mb-3" *ngFor="let job of activeJobs">
     <div class="card-body">
         <div class="row">
             <div class="col-lg-2 col-sm-3">
                 <label><small>Fecha</small></label>
-                <p>23-03-2022</p>
+                <p>{{job.date}}</p>
             </div>
             <div class="col-lg-3 col-sm-6">
                 <label><small>Titulo</small></label>
-                <p><a placement="top" ngbTooltip="Ir a la publicación" href="">Front End Developer <i class="bi bi-box-arrow-up-right"></i></a></p>
+                <p><a routerLink="/job/{{job.key}}" placement="top" ngbTooltip="Ir a la publicación" href="">{{job.title}} <i class="bi bi-box-arrow-up-right"></i></a></p>
             </div>
             <div class="col-lg-2 col-sm-3">
                 <label>Visitas
-                    <small class="text-secondary" placement="top" ngbTooltip="Cantidad de usuarios que han visto tu publicación"><i class="bi bi-info-circle-fill"></i></small></label>
-                <p>356 <i class="bi bi-bar-chart-fill"></i></p>
+                    <small class="text-secondary" placement="top" ngbTooltip="Cantidad de usuarios que han visto tu publicación"><i class="bi bi-info-circle-fill"></i></small>
+                </label>
+                <p>{{job.visits}} <i class="bi bi-bar-chart-fill"></i></p>
             </div>
-            <div class="col-lg-2 col-sm-3">
-                <label><small>Estado</small></label>
+            <div class="col-lg-2 col-sm-4">
+                <label>
+                    <small>Estado</small>
+                    <small class="text-secondary ms-1" placement="top" ngbTooltip="Si esta 'Abierta' los usuarios visualizarán el boton de 'aplicar'"><i class="bi bi-info-circle-fill"></i></small>
+                </label>
                 <div class="form-group mb-3">
-                    <select name="" id="" class="form-select form-select-sm is-valid">
-                        <option value="1">Disponible</option>
-                        <option value="0">No disponible</option>
-                    </select>
+                    <div class="btn-group btn-group-sm btn-group-toggle" role="group" aria-label="Default button group">
+                        <button (click)="changeStatus(true, job)" type="button" [class]="job.status? 'btn btn-sm btn-outline-dark active' : 'btn btn-sm secondary'">Abierta</button>
+                        <button (click)="changeStatus(false, job)" type="button" [class]="!job.status? 'btn btn-sm btn-outline-dark active ms-2' : 'btn btn-sm ms-2'">Cerrada</button>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-sm-9">
+            <div class="col-lg-3 col-sm-8">
                 <label><small>Acciones</small></label>
                 <br>
                 <div class="btn-group btn-group-sm mb-3" role="group" aria-label="Basic outlined example">

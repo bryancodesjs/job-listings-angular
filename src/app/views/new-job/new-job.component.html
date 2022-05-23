@@ -1,9 +1,9 @@
-<div class="container-fluid">
+<div class="container-fluid mb-5">
     <div class="container animate__animated animate__fadeIn">
         <div *ngIf="!jobSent" class="row text-center pt-5 pb-5">
             <div class="col-md-12 col-lg-9 mx-auto">
-                <h2><strong>Publique un Trabajo</strong></h2>
-                <h5>y reciba solicitudes de aplicantes talentosos</h5>
+                <h2><strong>Publica un Trabajo</strong></h2>
+                <h5>y recibe solicitudes de aplicantes talentosos</h5>
                 <div class="row mt-5 animate__animated animate__fadeInUp">
                     <div [class]="stepOne? 'col-4 step active' : 'col-4 step'">
                         <h5 class="label"><strong>Paso 1</strong></h5>
@@ -143,12 +143,12 @@
                                 <label for="" class="text-muted">Escriba un requerimiento y presione "Enter" ó haga click en <em>Agregar Requerimiento</em></label>
                                 <div class="input-group">
                                     <input (keyup.enter)="addRequirement()" [(ngModel)]="newRequirement" type="text" class="form-control">
-                                    <button class="btn btn-sm secondary" (click)="addRequirement()">Agregar Requerimiento <i class="bi bi-plus-lg"></i></button>
+                                    <button class="btn btn-sm secondary" (click)="addRequirement()"><span class="hide-sm">Agregar Requerimiento</span> <i class="bi bi-plus-lg"></i></button>
                                 </div>
                                 <!-- list of requirements -->
                                 <ul class="list-group list-group-flush mt-3">
                                     <li *ngFor="let req of requirementsInMemory , let i = index" class="list-group-item">{{req.name}} 
-                                        <span class="ms-4" placement="top" ngbTooltip="Remove this requirement">
+                                        <span class="ms-4" placement="top" ngbTooltip="Eliminar este requerimiento">
                                             <span class="round-btn danger" (click)="removeRequirement(i)">
                                                 <i class="bi bi-x"></i>
                                             </span>
@@ -162,12 +162,12 @@
                                 <label for="" class="text-muted">Escriba un beneficio y presione "Enter" ó haga click en <em>Agregar Beneficio</em></label>
                                 <div class="input-group">
                                     <input (keyup.enter)="addBenefit()" [(ngModel)]="newBenefit" type="text" class="form-control form-control">
-                                    <button class="btn btn-sm secondary" (click)="addBenefit()">Agregar Beneficio <i class="bi bi-plus-lg"></i></button>
+                                    <button class="btn btn-sm secondary" (click)="addBenefit()"><span class="hide-sm">Agregar Beneficio</span> <i class="bi bi-plus-lg"></i></button>
                                 </div>
                                 <!-- list of requirements -->
                                 <ul class="list-group list-group-flush mt-3">
                                     <li *ngFor="let ben of BenefitsInMemory, let i = index" class="list-group-item">{{ben.name}} 
-                                        <span class="ms-4" placement="top" ngbTooltip="Remove this benefit">
+                                        <span class="ms-4" placement="top" ngbTooltip="Eliminar este beneficio">
                                             <span class="round-btn danger" (click)="removeBenefit(i)">
                                                 <i class="bi bi-x"></i>
                                             </span>

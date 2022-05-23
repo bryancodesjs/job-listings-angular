@@ -32,3 +32,13 @@ app-root {
 app-admin-panel, app-login{
     flex: 1;
 }
+@media screen and (max-width:575px){
+    .hide-sm {
+        display: none;
+    }
+}
+.btn-group-toggle {
+    padding: 0.2rem;
+    background-color: #eeeeee;
+    border: 1px solid #22262a;
+}
