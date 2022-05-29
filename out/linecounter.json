@@ -1,0 +1,723 @@
+{
+    "extension": "linecounter",
+    "version": "0.2.7",
+    "workspace": "c:\\Users\\Bryan\\job-listings-angular",
+    "linecount": [
+        {
+            "version": "0.2.7",
+            "counttime": "2022-05-25 23:43:05",
+            "filesum": 108,
+            "codesum": 144838,
+            "commentsum": 12850,
+            "blanksum": 13323,
+            "statistics": {
+                ".md": {
+                    "code": 14,
+                    "comment": 4,
+                    "blank": 13
+                },
+                ".json": {
+                    "code": 70635,
+                    "comment": 3,
+                    "blank": 117
+                },
+                ".ts": {
+                    "code": 971,
+                    "comment": 117,
+                    "blank": 147
+                },
+                ".html": {
+                    "code": 692,
+                    "comment": 36,
+                    "blank": 7
+                },
+                ".scss": {
+                    "code": 253,
+                    "comment": 7,
+                    "blank": 2
+                },
+                ".svg": {
+                    "code": 34,
+                    "comment": 0,
+                    "blank": 0
+                },
+                "": {
+                    "code": 50,
+                    "comment": 27,
+                    "blank": 11
+                },
+                ".js": {
+                    "code": 71915,
+                    "comment": 12642,
+                    "blank": 12947
+                },
+                ".txt": {
+                    "code": 271,
+                    "comment": 1,
+                    "blank": 79
+                },
+                ".css": {
+                    "code": 3,
+                    "comment": 13,
+                    "blank": 0
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 3,
+                    "code": 14,
+                    "comment": 2,
+                    "filename": ".browserslistrc"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 1,
+                    "filename": ".editorconfig"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": ".gitattributes"
+                },
+                {
+                    "blank": 5,
+                    "code": 21,
+                    "comment": 24,
+                    "filename": ".gitignore"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": ".netlify\\state.json"
+                },
+                {
+                    "blank": 5,
+                    "code": 111,
+                    "comment": 0,
+                    "filename": "angular.json"
+                },
+                {
+                    "blank": 79,
+                    "code": 271,
+                    "comment": 1,
+                    "filename": "dist\\job-listings-angular\\3rdpartylicenses.txt"
+                },
+                {
+                    "blank": 0,
+                    "code": 30,
+                    "comment": 2,
+                    "filename": "dist\\job-listings-angular\\assets\\css\\buttons.scss"
+                },
+                {
+                    "filename": "dist\\job-listings-angular\\assets\\icons\\checkmark.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "dist\\job-listings-angular\\assets\\img\\undraw_air_support_re_nybl.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "dist\\job-listings-angular\\assets\\img\\undraw_dev_focus_re_6iwt.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "dist\\job-listings-angular\\assets\\img\\undraw_people_search_re_5rre.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "dist\\job-listings-angular\\assets\\img\\undraw_the_search_s0xf.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "dist\\job-listings-angular\\assets\\logo.svg"
+                },
+                {
+                    "filename": "dist\\job-listings-angular\\assets\\logo.webp",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "dist\\job-listings-angular\\assets\\logo2.svg"
+                },
+                {
+                    "filename": "dist\\job-listings-angular\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 1,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "dist\\job-listings-angular\\index.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 1,
+                    "filename": "dist\\job-listings-angular\\main.519275d76b11e0c09e06.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "dist\\job-listings-angular\\polyfills.6719752d752398bca675.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "dist\\job-listings-angular\\runtime.1957d5916b975b1e2e0c.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 2,
+                    "filename": "dist\\job-listings-angular\\scripts.f603e1c95ea45f764553.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 13,
+                    "filename": "dist\\job-listings-angular\\styles.654f16bf691f7a850483.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 37,
+                    "comment": 8,
+                    "filename": "karma.conf.js"
+                },
+                {
+                    "blank": 106,
+                    "code": 70419,
+                    "comment": 0,
+                    "filename": "package-lock.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 48,
+                    "comment": 0,
+                    "filename": "package.json"
+                },
+                {
+                    "blank": 13,
+                    "code": 14,
+                    "comment": 4,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 2,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "src\\app\\app-routing.module.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "src\\app\\app.component.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\app.component.scss"
+                },
+                {
+                    "blank": 4,
+                    "code": 31,
+                    "comment": 0,
+                    "filename": "src\\app\\app.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 24,
+                    "comment": 1,
+                    "filename": "src\\app\\app.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 52,
+                    "comment": 1,
+                    "filename": "src\\app\\app.module.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "src\\app\\models\\job.model.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\app\\services\\auth.service.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 25,
+                    "comment": 1,
+                    "filename": "src\\app\\services\\auth.service.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\app\\services\\job-service.service.spec.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "src\\app\\services\\job-service.service.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 52,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\about\\about.component.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\about\\about.component.scss"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\about\\about.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\about\\about.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\admin-panel\\admin-panel.component.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\admin-panel\\admin-panel.component.scss"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\admin-panel\\admin-panel.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\admin-panel\\admin-panel.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 40,
+                    "comment": 1,
+                    "filename": "src\\app\\views\\admin-panel\\my-jobs\\my-jobs.component.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\admin-panel\\my-jobs\\my-jobs.component.scss"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\admin-panel\\my-jobs\\my-jobs.component.spec.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 53,
+                    "comment": 9,
+                    "filename": "src\\app\\views\\admin-panel\\my-jobs\\my-jobs.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 51,
+                    "comment": 5,
+                    "filename": "src\\app\\views\\courses\\courses.component.html"
+                },
+                {
+                    "blank": 1,
+                    "code": 33,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\courses\\courses.component.scss"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\courses\\courses.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\courses\\courses.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 51,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\home\\home.component.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\home\\home.component.scss"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\home\\home.component.spec.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 27,
+                    "comment": 2,
+                    "filename": "src\\app\\views\\home\\home.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 72,
+                    "comment": 2,
+                    "filename": "src\\app\\views\\job\\job.component.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 1,
+                    "filename": "src\\app\\views\\job\\job.component.scss"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\job\\job.component.spec.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 42,
+                    "comment": 3,
+                    "filename": "src\\app\\views\\job\\job.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 40,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\login\\login.component.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\login\\login.component.scss"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\login\\login.component.spec.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 64,
+                    "comment": 1,
+                    "filename": "src\\app\\views\\login\\login.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 249,
+                    "comment": 22,
+                    "filename": "src\\app\\views\\new-job\\new-job.component.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 45,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\new-job\\new-job.component.scss"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\new-job\\new-job.component.spec.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 168,
+                    "comment": 22,
+                    "filename": "src\\app\\views\\new-job\\new-job.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\not-found\\not-found.component.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\not-found\\not-found.component.scss"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\not-found\\not-found.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\not-found\\not-found.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\shared\\cookies\\cookies.component.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\shared\\cookies\\cookies.component.scss"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\shared\\cookies\\cookies.component.spec.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 25,
+                    "comment": 1,
+                    "filename": "src\\app\\views\\shared\\cookies\\cookies.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 24,
+                    "comment": 1,
+                    "filename": "src\\app\\views\\shared\\footer\\footer.component.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\shared\\footer\\footer.component.scss"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\shared\\footer\\footer.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\shared\\footer\\footer.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 48,
+                    "comment": 3,
+                    "filename": "src\\app\\views\\shared\\header\\header.component.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\shared\\header\\header.component.scss"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\shared\\header\\header.component.spec.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "src\\app\\views\\shared\\header\\header.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\assets\\.gitkeep"
+                },
+                {
+                    "blank": 0,
+                    "code": 30,
+                    "comment": 2,
+                    "filename": "src\\assets\\css\\buttons.scss"
+                },
+                {
+                    "filename": "src\\assets\\icons\\checkmark.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\assets\\img\\undraw_air_support_re_nybl.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\assets\\img\\undraw_dev_focus_re_6iwt.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\assets\\img\\undraw_people_search_re_5rre.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\assets\\img\\undraw_the_search_s0xf.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\assets\\logo.svg"
+                },
+                {
+                    "filename": "src\\assets\\logo.webp",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\assets\\logo2.svg"
+                },
+                {
+                    "blank": 12946,
+                    "code": 71874,
+                    "comment": 12631,
+                    "filename": "src\\assets\\scripts\\echarts.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\environments\\environment.prod.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 11,
+                    "filename": "src\\environments\\environment.ts"
+                },
+                {
+                    "filename": "src\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 1,
+                    "filename": "src\\index.html"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "src\\main.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 2,
+                    "comment": 61,
+                    "filename": "src\\polyfills.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 41,
+                    "comment": 2,
+                    "filename": "src\\styles.scss"
+                },
+                {
+                    "blank": 4,
+                    "code": 19,
+                    "comment": 4,
+                    "filename": "src\\test.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "tsconfig.app.json"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 1,
+                    "filename": "tsconfig.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 14,
+                    "comment": 1,
+                    "filename": "tsconfig.spec.json"
+                }
+            ]
+        }
+    ]
+}

@@ -22,7 +22,10 @@ import { AboutComponent } from './views/about/about.component';
 import { JobComponent } from './views/job/job.component';
 import { CookiesComponent } from './views/shared/cookies/cookies.component';
 import { MyJobsComponent } from './views/admin-panel/my-jobs/my-jobs.component';
-;
+import { RegistrationFormComponent } from './views/registration-form/registration-form.component';
+import { QuestionsComponent } from './views/registration-form/questions/questions.component';
+//hashed routes fix
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +40,9 @@ import { MyJobsComponent } from './views/admin-panel/my-jobs/my-jobs.component';
     AboutComponent,
     JobComponent,
     CookiesComponent,
-    MyJobsComponent
+    MyJobsComponent,
+    RegistrationFormComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,9 @@ import { MyJobsComponent } from './views/admin-panel/my-jobs/my-jobs.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

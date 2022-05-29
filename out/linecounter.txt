@@ -1,0 +1,134 @@
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2022-05-25 23:43:05
+count workspace : c:\Users\Bryan\job-listings-angular
+total files : 108
+total code lines : 144838
+total comment lines : 12850
+total blank lines : 13323
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |            .md|             14|              4|             13| 0.0097|
+   |          .json|          70635|              3|            117|     49|
+   |            .ts|            971|            117|            147|   0.67|
+   |          .html|            692|             36|              7|   0.48|
+   |          .scss|            253|              7|              2|   0.17|
+   |           .svg|             34|              0|              0|  0.023|
+   |               |             50|             27|             11|  0.035|
+   |            .js|          71915|          12642|          12947|     50|
+   |           .txt|            271|              1|             79|   0.19|
+   |           .css|              3|             13|              0| 0.0021|
+   -------------------------------------------------------------------------
+.browserslistrc, code is 14, comment is 2, blank is 3.
+.editorconfig, code is 13, comment is 1, blank is 3.
+.gitattributes, code is 2, comment is 0, blank is 0.
+.gitignore, code is 21, comment is 24, blank is 5.
+.netlify\state.json, code is 3, comment is 0, blank is 0.
+angular.json, code is 111, comment is 0, blank is 5.
+dist\job-listings-angular\3rdpartylicenses.txt, code is 271, comment is 1, blank is 79.
+dist\job-listings-angular\assets\css\buttons.scss, code is 30, comment is 2, blank is 0.
+dist\job-listings-angular\assets\icons\checkmark.png, it is a binary file.
+dist\job-listings-angular\assets\img\undraw_air_support_re_nybl.svg, code is 1, comment is 0, blank is 0.
+dist\job-listings-angular\assets\img\undraw_dev_focus_re_6iwt.svg, code is 1, comment is 0, blank is 0.
+dist\job-listings-angular\assets\img\undraw_people_search_re_5rre.svg, code is 1, comment is 0, blank is 0.
+dist\job-listings-angular\assets\img\undraw_the_search_s0xf.svg, code is 1, comment is 0, blank is 0.
+dist\job-listings-angular\assets\logo.svg, code is 12, comment is 0, blank is 0.
+dist\job-listings-angular\assets\logo.webp, it is a binary file.
+dist\job-listings-angular\assets\logo2.svg, code is 1, comment is 0, blank is 0.
+dist\job-listings-angular\favicon.ico, it is a binary file.
+dist\job-listings-angular\index.html, code is 12, comment is 1, blank is 1.
+dist\job-listings-angular\main.519275d76b11e0c09e06.js, code is 1, comment is 1, blank is 0.
+dist\job-listings-angular\polyfills.6719752d752398bca675.js, code is 1, comment is 0, blank is 0.
+dist\job-listings-angular\runtime.1957d5916b975b1e2e0c.js, code is 1, comment is 0, blank is 0.
+dist\job-listings-angular\scripts.f603e1c95ea45f764553.js, code is 1, comment is 2, blank is 0.
+dist\job-listings-angular\styles.654f16bf691f7a850483.css, code is 3, comment is 13, blank is 0.
+karma.conf.js, code is 37, comment is 8, blank is 1.
+package-lock.json, code is 70419, comment is 0, blank is 106.
+package.json, code is 48, comment is 0, blank is 0.
+README.md, code is 14, comment is 4, blank is 13.
+src\app\app-routing.module.ts, code is 23, comment is 0, blank is 2.
+src\app\app.component.html, code is 4, comment is 0, blank is 0.
+src\app\app.component.scss, code is 0, comment is 0, blank is 0.
+src\app\app.component.spec.ts, code is 31, comment is 0, blank is 4.
+src\app\app.component.ts, code is 24, comment is 1, blank is 4.
+src\app\app.module.ts, code is 52, comment is 1, blank is 1.
+src\app\models\job.model.ts, code is 19, comment is 0, blank is 0.
+src\app\services\auth.service.spec.ts, code is 12, comment is 0, blank is 4.
+src\app\services\auth.service.ts, code is 25, comment is 1, blank is 4.
+src\app\services\job-service.service.spec.ts, code is 12, comment is 0, blank is 4.
+src\app\services\job-service.service.ts, code is 26, comment is 0, blank is 7.
+src\app\views\about\about.component.html, code is 52, comment is 0, blank is 0.
+src\app\views\about\about.component.scss, code is 9, comment is 0, blank is 0.
+src\app\views\about\about.component.spec.ts, code is 20, comment is 0, blank is 5.
+src\app\views\about\about.component.ts, code is 11, comment is 0, blank is 4.
+src\app\views\admin-panel\admin-panel.component.html, code is 14, comment is 0, blank is 2.
+src\app\views\admin-panel\admin-panel.component.scss, code is 0, comment is 0, blank is 0.
+src\app\views\admin-panel\admin-panel.component.spec.ts, code is 20, comment is 0, blank is 5.
+src\app\views\admin-panel\admin-panel.component.ts, code is 12, comment is 0, blank is 4.
+src\app\views\admin-panel\my-jobs\my-jobs.component.html, code is 40, comment is 1, blank is 1.
+src\app\views\admin-panel\my-jobs\my-jobs.component.scss, code is 4, comment is 0, blank is 0.
+src\app\views\admin-panel\my-jobs\my-jobs.component.spec.ts, code is 20, comment is 0, blank is 5.
+src\app\views\admin-panel\my-jobs\my-jobs.component.ts, code is 53, comment is 9, blank is 3.
+src\app\views\courses\courses.component.html, code is 51, comment is 5, blank is 0.
+src\app\views\courses\courses.component.scss, code is 33, comment is 0, blank is 1.
+src\app\views\courses\courses.component.spec.ts, code is 20, comment is 0, blank is 5.
+src\app\views\courses\courses.component.ts, code is 11, comment is 0, blank is 4.
+src\app\views\home\home.component.html, code is 51, comment is 0, blank is 0.
+src\app\views\home\home.component.scss, code is 23, comment is 0, blank is 0.
+src\app\views\home\home.component.spec.ts, code is 20, comment is 0, blank is 5.
+src\app\views\home\home.component.ts, code is 27, comment is 2, blank is 3.
+src\app\views\job\job.component.html, code is 72, comment is 2, blank is 0.
+src\app\views\job\job.component.scss, code is 21, comment is 1, blank is 0.
+src\app\views\job\job.component.spec.ts, code is 20, comment is 0, blank is 5.
+src\app\views\job\job.component.ts, code is 42, comment is 3, blank is 1.
+src\app\views\login\login.component.html, code is 40, comment is 0, blank is 0.
+src\app\views\login\login.component.scss, code is 6, comment is 0, blank is 0.
+src\app\views\login\login.component.spec.ts, code is 20, comment is 0, blank is 5.
+src\app\views\login\login.component.ts, code is 64, comment is 1, blank is 3.
+src\app\views\new-job\new-job.component.html, code is 249, comment is 22, blank is 1.
+src\app\views\new-job\new-job.component.scss, code is 45, comment is 0, blank is 0.
+src\app\views\new-job\new-job.component.spec.ts, code is 20, comment is 0, blank is 5.
+src\app\views\new-job\new-job.component.ts, code is 168, comment is 22, blank is 7.
+src\app\views\not-found\not-found.component.html, code is 10, comment is 0, blank is 1.
+src\app\views\not-found\not-found.component.scss, code is 0, comment is 0, blank is 0.
+src\app\views\not-found\not-found.component.spec.ts, code is 20, comment is 0, blank is 5.
+src\app\views\not-found\not-found.component.ts, code is 11, comment is 0, blank is 4.
+src\app\views\shared\cookies\cookies.component.html, code is 7, comment is 0, blank is 0.
+src\app\views\shared\cookies\cookies.component.scss, code is 8, comment is 0, blank is 0.
+src\app\views\shared\cookies\cookies.component.spec.ts, code is 20, comment is 0, blank is 5.
+src\app\views\shared\cookies\cookies.component.ts, code is 25, comment is 1, blank is 2.
+src\app\views\shared\footer\footer.component.html, code is 24, comment is 1, blank is 0.
+src\app\views\shared\footer\footer.component.scss, code is 0, comment is 0, blank is 0.
+src\app\views\shared\footer\footer.component.spec.ts, code is 20, comment is 0, blank is 5.
+src\app\views\shared\footer\footer.component.ts, code is 11, comment is 0, blank is 4.
+src\app\views\shared\header\header.component.html, code is 48, comment is 3, blank is 1.
+src\app\views\shared\header\header.component.scss, code is 3, comment is 0, blank is 0.
+src\app\views\shared\header\header.component.spec.ts, code is 20, comment is 0, blank is 5.
+src\app\views\shared\header\header.component.ts, code is 18, comment is 0, blank is 2.
+src\assets\.gitkeep, code is 0, comment is 0, blank is 0.
+src\assets\css\buttons.scss, code is 30, comment is 2, blank is 0.
+src\assets\icons\checkmark.png, it is a binary file.
+src\assets\img\undraw_air_support_re_nybl.svg, code is 1, comment is 0, blank is 0.
+src\assets\img\undraw_dev_focus_re_6iwt.svg, code is 1, comment is 0, blank is 0.
+src\assets\img\undraw_people_search_re_5rre.svg, code is 1, comment is 0, blank is 0.
+src\assets\img\undraw_the_search_s0xf.svg, code is 1, comment is 0, blank is 0.
+src\assets\logo.svg, code is 12, comment is 0, blank is 0.
+src\assets\logo.webp, it is a binary file.
+src\assets\logo2.svg, code is 1, comment is 0, blank is 0.
+src\assets\scripts\echarts.js, code is 71874, comment is 12631, blank is 12946.
+src\environments\environment.prod.ts, code is 12, comment is 0, blank is 0.
+src\environments\environment.ts, code is 12, comment is 11, blank is 2.
+src\favicon.ico, it is a binary file.
+src\index.html, code is 18, comment is 1, blank is 0.
+src\main.ts, code is 9, comment is 0, blank is 3.
+src\polyfills.ts, code is 2, comment is 61, blank is 7.
+src\styles.scss, code is 41, comment is 2, blank is 1.
+src\test.ts, code is 19, comment is 4, blank is 4.
+tsconfig.app.json, code is 12, comment is 1, blank is 2.
+tsconfig.json, code is 28, comment is 1, blank is 1.
+tsconfig.spec.json, code is 14, comment is 1, blank is 3.
+===============================================================================

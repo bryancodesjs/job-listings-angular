@@ -29,7 +29,7 @@ app-root {
     display: flex;
     flex-flow: column;
 }
-app-admin-panel, app-login{
+app-admin-panel, app-login, app-registration-form{
     flex: 1;
 }
 @media screen and (max-width:575px){
@@ -41,4 +41,36 @@ app-admin-panel, app-login{
     padding: 0.2rem;
     background-color: #eeeeee;
     border: 1px solid #22262a;
+}
+button.btn-link {
+    text-decoration: none !important;
+    text-align: start !important;
+}
+.card-divider {
+    height: 2rem;
+}
+.numbered-bullet-list {
+    list-style: none;
+    padding: 0;
+    li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    .number {
+        background-color: #0d6efd;
+        width: 2rem;
+        height: 2rem;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+    }
+    .caption {
+        label {
+
+        }
+    }
 }

@@ -1,0 +1,132 @@
+<div class="container-fluid animate__animated animate__fadeIn bg-light h-100">
+    <img class="" id="registrationIMG" src="/assets/img/undraw_inbox_oppv.svg" alt="ilustración de una mujer recibiendo un email">
+    <img class="" id="registrationIMGtwo" src="/assets/img/undraw_my_feed_inj0.svg" alt="ilustración de un perfil de postulante para empleo">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <!-- <h3 class="mt-5"><span>Recibe solicitudes de candidatos</span></h3> -->
+                <h1 class="mt-5"><strong>Recibe solicitudes de candidatos de forma ordenada</strong></h1>
+                <h5><strong>Magnet</strong> reduce el tiempo de busqueda conectando tus vacantes con cantidatos segmentados.</h5>
+                <ul class="numbered-bullet-list mt-5">
+                    <li>
+                        <div class="number">
+                            1
+                        </div>
+                        <h5 class="caption">
+                            Completa el formulario de registro
+                        </h5>
+                    </li>
+                    <li>
+                        <div class="number">
+                            2
+                        </div>
+                        <h5 class="caption">
+                            Tu solicitud es revisada
+                            <br>
+                            <small class="text-muted">< 30 min. durante horas laborables</small>
+                        </h5>
+                    </li>
+                    <li>
+                        <div class="number">
+                            <i class="bi bi-check-lg"></i>
+                        </div>
+                        <h5 class="caption">
+                            Empieza a publicar tus vacantes
+                        </h5>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-6">
+                <!-- <h3 class="text-center mt-3"><strong>  Iniciar Sesión</strong></h3> -->
+                <div class="card login-card mx-auto mb-5 mt-5 animate__animated animate__fadeInUp">
+                    <div class="card-body" *ngIf="sent">
+                        <div class="d-flex text-center flex-column justify-content-center align-items-center mt-4 mb-4">
+                            <img class="mb-4" width="86px" src="/assets/icons/checkmark.png" alt="checkmark icon">
+                            <h3><strong>Formulario Enviado</strong></h3>
+                            <p>Recibiras una confirmación via correo electrónico con las instrucciones de acceso.</p>
+                        </div>
+                    </div>
+                    <div class="card-body" *ngIf="!sent">
+                        <div class="mt-4 mb-4 text-center">
+                            <h3 class="text-center"><strong>Formulario de Registro</strong></h3>
+                            <p>Para empresas y reclutadores verificados <i class="bi bi-shield-fill-check text-primary"></i></p>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Soy</label>
+                            <div class="d-flex flex-wrap">
+                                <div class="form-check me-4">
+                                    <input (click)="tipoRegistro(0)" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                      Empresa
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input (click)="tipoRegistro(1)" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                      Agencia/Reclutador
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="">Nombre</label>
+                            <input [(ngModel)]="nuevoRegistro.nombre" type="text" [class]="hasName? 'form-control' : 'form-control is-invalid'">
+                            <label *ngIf="!hasName" class="text-danger"><small>Por favor indica tu nombre</small></label>
+                        </div>
+                        <div class="form-group mb-3" *ngIf="esEmpresa">
+                            <label for="">RNC</label>
+                            <input [(ngModel)]="nuevoRegistro.rnc" type="text" [class]="hasRNC? 'form-control' : 'form-control is-invalid'">
+                            <label *ngIf="!hasRNC" class="text-danger"><small>Por favor indica tu RNC</small></label>
+                        </div>
+                        <div class="card-divider"></div>
+                        <div class="form-group mb-3">
+                            <label for="">Correo Electrónico</label>
+                            <input [(ngModel)]="nuevoRegistro.email" type="text" [class]="hasEmail? 'form-control' : 'form-control is-invalid'">
+                            <label *ngIf="!hasEmail" class="text-danger"><small>Por favor indica tu correo electrónico</small></label>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="">Sitio Web</label>
+                            <input [(ngModel)]="nuevoRegistro.website" type="text" class="form-control" placeholder="ejemplo.com">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="">Dirección Perfil de LinkedIn</label>
+                            <input [(ngModel)]="nuevoRegistro.linkedin" type="text" [class]="hasLinkedin? 'form-control' : 'form-control is-invalid'" placeholder="https://www.linkedin.com/in/nombredeusuario">
+                            <label *ngIf="!hasLinkedin" class="text-danger"><small>Por favor indica la URL de tu perfil de LinkedIn</small></label>
+                        </div>
+                        <div class="form-group mb-3" *ngIf="esEmpresa">
+                            <label for="">Ubicación</label>
+                            <input [(ngModel)]="nuevoRegistro.location" type="text" [class]="hasLocation? 'form-control' : 'form-control is-invalid'" list="ubicaciones">
+                            <label *ngIf="!hasLocation" class="text-danger"><small>Por favor indica la ciudad en la cual se ubica tu empresa</small></label>
+                        </div>
+                        <div class="card-divider"></div>
+                        <div class="form-group mb-3" *ngIf="error">
+                            <div class="alert alert-danger" role="alert">
+                                Algunos datos son incorrectos, porfavor intente otra vez.
+                              </div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <button class="btn primary w-100" (click)="validateForm()">
+                                <span *ngIf="!loading">Completar Registro</span>
+                                <span *ngIf="loading">
+                                    <div class="spinner-border spinner-border-sm text-light" role="status">
+                                      </div>
+                                      <span class="ms-2">Ingresando...</span>
+                                </span>
+                            </button>
+                        </div>
+                        <!-- <div class="form-group">
+                            <a href="" class="">Olvidé mi contraseña</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<datalist id="ubicaciones">
+<option value="Santo Domingo"></option>
+<option value="Santiago"></option>
+<option value="La Romana"></option>
+</datalist>

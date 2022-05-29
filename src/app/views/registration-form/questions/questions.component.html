@@ -1,0 +1,8 @@
+<h3><strong>Preguntas Frecuentes</strong></h3>
+<ngb-accordion [closeOthers]="true" activeIds="static-0">
+    <ngb-panel *ngFor="let question of questions, let i = index" id="{{'static-' + i}}" title="{{question.question}}">
+      <ng-template ngbPanelContent>
+        {{question.answer}}
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
