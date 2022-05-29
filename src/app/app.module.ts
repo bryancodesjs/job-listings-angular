@@ -26,6 +26,11 @@ import { RegistrationFormComponent } from './views/registration-form/registratio
 import { QuestionsComponent } from './views/registration-form/questions/questions.component';
 //hashed routes fix
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
+//guard 
+import { AdminGuardGuard } from './servies/guards/admin-guard.guard';
+import { AuthService } from './services/auth.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +59,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     AngularFireDatabaseModule
   ],
   providers: [
-    {provide: LocationStrategy, useClass: HashLocationStrategy}
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+    AdminGuardGuard,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

@@ -9,11 +9,13 @@ import { LoginComponent } from './views/login/login.component';
 import { NewJobComponent } from './views/new-job/new-job.component';
 import { RegistrationFormComponent } from './views/registration-form/registration-form.component';
 
+import {CanActivate} from "@angular/router";
+import { AdminGuardGuard } from './servies/guards/admin-guard.guard';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'new-job', component: NewJobComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'admin-panel', component: AdminPanelComponent},
+  {path: 'admin-panel', component: AdminPanelComponent, canActivate: [AdminGuardGuard]},
   {path: 'courses', component: CoursesComponent},
   {path:'about', component: AboutComponent},
   {path: 'job/:id', component: JobComponent},

@@ -35,7 +35,7 @@
         data-bs-target="#navcollapse"
         *ngIf="auth.userData | async"
         >Publica un trabajo</button>
-        <ul class="navbar-nav" *ngIf="auth.userData | async">
+        <ul class="navbar-nav"> <!-- *ngIf="auth.userData | async" -->
           <li class="nav-item" ngbDropdown>
             <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown2" role="button">
               Mi Perfil
