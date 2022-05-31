@@ -26,6 +26,8 @@ import { RegistrationFormComponent } from './views/registration-form/registratio
 import { QuestionsComponent } from './views/registration-form/questions/questions.component';
 //hashed routes fix
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { StringFilterPipe } from './pipes/string-filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,13 +44,15 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     CookiesComponent,
     MyJobsComponent,
     RegistrationFormComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    StringFilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
+    NgxPaginationModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule

@@ -9,7 +9,10 @@ import { map } from 'rxjs/operators';
 export class HomeComponent implements OnInit {
   activeJobs: any = [];
   todaysDate = new Date().toLocaleDateString();
-  
+  //pagination variables
+  p: number = 1;
+  public filter: string = '';
+
   constructor(private _JobService: JobServiceService) { }
 
   ngOnInit(): void {

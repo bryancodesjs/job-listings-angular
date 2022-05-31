@@ -14,15 +14,25 @@
         </div>
         <div class="row" *ngIf="activeJobs.length != 0">
             <div class="col-md-12 col-lg-9 mx-auto animate__animated animate__fadeInUp">
+                <!-- barra de busqueda y filtrado -->
+                <div class="w-100 mb-5">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-text floating" id="basic-addon1"><i class="bi bi-search"></i></span>
+                            <input type="text" class="form-control" [(ngModel)]="filter" placeholder="Desarrollador">
+
+                        </div>
+                    </div>
+                </div>
                 <div class="d-flex justify-content-between mb-4 ">
-                    <h4 class="float-start mb-0"><strong>Empleos</strong></h4>
+                    <h4 class="float-start mb-0"><strong>Resultados</strong></h4>
                     <div>
                         <select name="" id="" class="form-select float-end mb-2">
                             <option value="">Mas recientes</option>
                         </select>
                     </div>
                 </div>
-                <div *ngFor="let job of activeJobs" [class]="job.date == todaysDate? 'card new' : 'card'" routerLink="/job/{{job.key}}">
+                <div *ngFor="let job of activeJobs | stringFilter: filter | paginate: { itemsPerPage: 10, currentPage: p, id: 'vacantes' }" [class]="job.date == todaysDate? 'card new' : 'card'" routerLink="/job/{{job.key}}">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">
@@ -44,6 +54,10 @@
                             <div class="highlight-bar"></div>
                         </div>
                     </div>
+                </div>
+                <div class="d-flex-justify-content-center mt-3">
+                    <pagination-controls (pageChange)="p = $event" id="vacantes">
+                </pagination-controls>
                 </div>
             </div>
         </div>

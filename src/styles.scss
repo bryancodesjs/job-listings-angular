@@ -68,9 +68,22 @@ button.btn-link {
         border-radius: 100%;
         margin-right: 0.5rem;
     }
-    .caption {
-        label {
+    // .caption {
+    //     label {
 
-        }
+    //     }
+    // }
+}
+.ngx-pagination {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 1rem 0 !important;
+    padding: 1rem !important;
+    .current {
+        background: #0c6dfb !important;
+        border-radius: 2px ;
     }
+}
+input::placeholder {
+    color: #b4bbc5 !important;
 }
