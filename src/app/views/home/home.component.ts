@@ -12,6 +12,13 @@ export class HomeComponent implements OnInit {
   //pagination variables
   p: number = 1;
   public filter: string = '';
+  public labels: any = {
+    previousLabel: 'Anterior',
+    nextLabel: 'Siguiente',
+    screenReaderPaginationLabel: 'Paginación',
+    screenReaderPageLabel: 'Página',
+    screenReaderCurrentLabel: `Estas en la página`
+  };
 
   constructor(private _JobService: JobServiceService) { }
 
