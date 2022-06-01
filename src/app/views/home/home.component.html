@@ -1,31 +1,48 @@
-<div class="container-fluid">
+<div [class]=" 'container-fluid slideshow-bg-' + backgroundCode +' hero-container-bg'">
     <div class="container animate__animated animate__fadeIn">
-        <div class="row text-center p-5">
-            <div class="col-md-12 col-lg-9 mx-auto">
-                <h2><strong>Encuentra ese trabajo que deseas</strong></h2>
-                <h4>
+        <div class="row text-center pt-5 pb-5">
+            <div class="col-md-12 col-lg-9 mx-auto pt-5 pb-5">
+                <h1 class="title">
+                    <strong>
+                        Mas flexibilidad. La posición que buscas. Una nueva carrera. 
+                        <span class="text-accent">Todo Comienza aqui.</span>
+                    </strong>
+                </h1>
+                <!-- <h4 class="description">
                     Magnet es el lugar donde el talento y las empresas se atraen y conectan.
-                </h4>
+                </h4> -->
+                <!-- barra de busqueda y filtrado -->
+                <div class="w-100 mt-4">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-text floating" id="basic-addon1"><i class="bi bi-search"></i></span>
+                            <input type="text" class="form-control" [(ngModel)]="filter" placeholder="Desarrollador">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="container animate__animated animate__fadeIn">
+        <div class="row">
+            <div class="col-md-12 col-lg-9 mx-auto">
+                <div class="d-flex justify-content-end">
+                    <div class="credits">Imagen de <em>pexels.com</em></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="container animate__animated animate__fadeIn">
         <div class="d-flex justify-content-center" *ngIf="activeJobs.length == 0">
             <div class="spinner-border" role="status">
             </div>
         </div>
         <div class="row" *ngIf="activeJobs.length != 0">
             <div class="col-md-12 col-lg-9 mx-auto animate__animated animate__fadeInUp">
-                <!-- barra de busqueda y filtrado -->
-                <div class="w-100 mb-5">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-text floating" id="basic-addon1"><i class="bi bi-search"></i></span>
-                            <input type="text" class="form-control" [(ngModel)]="filter" placeholder="Desarrollador">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between mb-4 ">
-                    <h4 class="float-start mb-0"><strong>Resultados</strong></h4>
+                <div class="d-flex justify-content-between mb-4 mt-4">
+                    <h4 class="float-start mb-0"><strong>Vacantes</strong></h4>
                     <!-- <div>
                         <select name="" id="" class="form-select float-end mb-2">
                             <option value="">Mas recientes</option>

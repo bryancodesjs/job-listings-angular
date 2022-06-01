@@ -30,3 +30,38 @@
 .input-group .form-control {
     padding-left: 42px;
 }
+.hero-container-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    .title {
+        color: white;
+        text-shadow: 2px 2px 103px black;
+    }
+    .description {
+        color:white;
+        text-shadow: 2px 2px 5px black;
+    }
+}
+.credits {
+    color: #b1b1b1;
+    font-size: 0.8rem;
+    padding-bottom: 12px;
+    position: absolute;
+    transform: translate(0px, -31px);
+}
+.slideshow-bg-1 {
+    background-image: url('/assets/img/hero-slideshow/1.webp');
+}
+.slideshow-bg-2 {
+    background-image: url('/assets/img/hero-slideshow/2.webp');
+}
+.slideshow-bg-3 {
+    background-image: url('/assets/img/hero-slideshow/3.webp');
+}
+.slideshow-bg-4 {
+    background-image: url('/assets/img/hero-slideshow/4.webp');
+}
+.slideshow-bg-5 {
+    background-image: url('/assets/img/hero-slideshow/5.webp');
+}

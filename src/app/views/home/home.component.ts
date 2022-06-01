@@ -20,12 +20,17 @@ export class HomeComponent implements OnInit {
     screenReaderCurrentLabel: `Estas en la página`
   };
 
+  backgroundCode = 0;
   constructor(private _JobService: JobServiceService) { }
 
   ngOnInit(): void {
     this.retrieveAll();
+    this.chooseRandomImage();
   }
-
+  //function which helps show a random background
+  chooseRandomImage() {
+    this.backgroundCode = Math.floor(Math.random() * (5-1 + 1)) + 1;
+  }
   retrieveAll(){
     this._JobService.getAll().snapshotChanges().pipe(
       map(changes => changes.map( c =>

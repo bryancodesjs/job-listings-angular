@@ -33,7 +33,9 @@
             "styles": [
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/assets/css/buttons.scss"
+              "src/assets/css/buttons.scss",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "src/assets/fonts/stylesheet.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
