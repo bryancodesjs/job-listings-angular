@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JobServiceService } from 'src/app/services/job-service.service';
 import { map } from 'rxjs/operators';
+import { HostListener } from '@angular/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -22,6 +23,14 @@ export class HomeComponent implements OnInit {
 
   backgroundCode = 0;
   constructor(private _JobService: JobServiceService) { }
+  @HostListener("scroll", ['$event'])
+  logScroll($event: Event){
+    if(window.pageYOffset > 80){
+      (document.getElementById('nav') as HTMLElement).className = 'fixed-top animate__animated animate__fadeInDown navbar navbar-expand-lg navbar-dark dark-bg'
+    } else {
+      (document.getElementById('nav') as HTMLElement).className = 'navbar navbar-expand-lg navbar-dark dark-bg'
+    }
+  }
 
   ngOnInit(): void {
     this.retrieveAll();
@@ -29,7 +38,7 @@ export class HomeComponent implements OnInit {
   }
   //function which helps show a random background
   chooseRandomImage() {
-    this.backgroundCode = Math.floor(Math.random() * (5-1 + 1)) + 1;
+    this.backgroundCode = Math.floor(Math.random() * (8-1 + 1)) + 1;
   }
   retrieveAll(){
     this._JobService.getAll().snapshotChanges().pipe(

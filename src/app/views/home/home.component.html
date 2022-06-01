@@ -1,5 +1,5 @@
-<div [class]=" 'container-fluid slideshow-bg-' + backgroundCode +' hero-container-bg'">
-    <div class="container animate__animated animate__fadeIn">
+<div [style]="'background-image:url(/assets/img/hero-slideshow/' + backgroundCode + '.webp)'" [class]=" 'container-fluid hero-container-bg'">
+    <div class="container main animate__animated animate__fadeIn">
         <div class="row text-center pt-5 pb-5">
             <div class="col-md-12 col-lg-9 mx-auto pt-5 pb-5">
                 <h1 class="title">
@@ -33,7 +33,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid" (window:scroll)="logScroll($event)">
     <div class="container animate__animated animate__fadeIn">
         <div class="d-flex justify-content-center" *ngIf="activeJobs.length == 0">
             <div class="spinner-border" role="status">

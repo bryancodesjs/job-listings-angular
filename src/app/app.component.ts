@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { HostListener } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -26,4 +27,5 @@ export class AppComponent {
     this.auth.signOut();
     localStorage.removeItem('magnetUserRef');
   }
+  
 }
