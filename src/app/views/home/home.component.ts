@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JobServiceService } from 'src/app/services/job-service.service';
 import { map } from 'rxjs/operators';
 import { HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -22,14 +23,14 @@ export class HomeComponent implements OnInit {
   };
 
   backgroundCode = 0;
-  constructor(private _JobService: JobServiceService) { }
+  constructor(private _JobService: JobServiceService, private _router: Router) { }
   @HostListener("scroll", ['$event'])
   logScroll($event: Event){
-    if(window.pageYOffset > 80){
-      (document.getElementById('nav') as HTMLElement).className = 'fixed-top animate__animated animate__fadeInDown navbar navbar-expand-lg navbar-dark dark-bg'
-    } else {
-      (document.getElementById('nav') as HTMLElement).className = 'navbar navbar-expand-lg navbar-dark dark-bg'
-    }
+    // if(this._router.url == '/'&& window.pageYOffset > 80){
+    //   (document.getElementById('nav') as HTMLElement).className = 'fixed-top animate__animated animate__fadeInDown navbar navbar-expand-lg navbar-dark dark-bg'
+    // } else {
+    //   (document.getElementById('nav') as HTMLElement).className = 'navbar navbar-expand-lg navbar-dark dark-bg'
+    // }
   }
 
   ngOnInit(): void {
