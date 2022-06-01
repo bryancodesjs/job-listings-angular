@@ -35,7 +35,8 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/css/buttons.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
-              "src/assets/fonts/stylesheet.css"
+              "src/assets/fonts/stylesheet.css",
+              "src/assets/css/animate.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
