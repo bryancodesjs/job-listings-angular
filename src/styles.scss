@@ -4,7 +4,7 @@
 h1, h2, h3, h4 {
     font-family: kanitbold !important;
 }
-body {
+body, p, span, input, label, textarea, h5, h6, ul li, a, li a {
     font-family: kanitlight !important;
 }
 @font-face {
@@ -13,7 +13,7 @@ body {
          url('/assets/fonts/kanit-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
+    font-display: swap;
 }
 
 @font-face {
@@ -22,7 +22,7 @@ body {
          url('/assets/fonts/kanit-light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
+    font-display: swap;
 }
 input, select, .card {
     border-radius: 0 !important;
