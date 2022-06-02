@@ -9,7 +9,7 @@
       <div class="collapse navbar-collapse" id="navcollapse">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/" data-bs-toggle="collapse" data-bs-target="#navcollapse">Encuentra vacantes</a>
+            <a class="nav-link" routerLink="/" >Encuentra vacantes</a>
           </li>
           <!-- <li class="nav-item">
             <a 
@@ -21,20 +21,13 @@
             data-bs-target="#navcollapse">Cursos <i class="bi bi-lightning-charge-fill text-primary"></i></a>
           </li> -->
           <li class="nav-item">
-            <a class="nav-link" routerLink="about" data-bs-toggle="collapse" data-bs-target="#navcollapse">Sobre Jobcafe</a>
+            <a class="nav-link" routerLink="about" >Sobre Jobcafe</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" routerLink="admin-panel">Mi Cuenta</a>
           </li>  -->
         </ul>
-        <!-- <button class="btn primary btn-sm" routerLink="login"*ngIf="!(auth.userData | async)">Iniciar Sesión</button> -->
-        <button 
-        class="btn primary btn-sm" 
-        routerLink="new-job" 
-        data-bs-toggle="collapse" 
-        data-bs-target="#navcollapse"
-        *ngIf="auth.userData | async"
-        >Publica un trabajo</button>
+        <button class="btn btn-primary ms-2" routerLink="login"*ngIf="!(auth.userData | async)">Iniciar Sesión</button>
         <ul class="navbar-nav" *ngIf="auth.userData | async">
           <li class="nav-item" ngbDropdown>
             <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown2" role="button">
@@ -46,7 +39,14 @@
             </div>
           </li>
         </ul>
-        
+        <button 
+          class="btn btn-primary ms-2" 
+          routerLink="new-job" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#navcollapse"
+          *ngIf="auth.userData | async"
+          >Publicar vacante
+        </button>
       </div>
     </div>
   </nav>
