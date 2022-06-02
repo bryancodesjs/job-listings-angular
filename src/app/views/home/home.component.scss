@@ -6,10 +6,10 @@
         background-color: #f1f5ff;
     }
     &.new {
-        background-color: #ffd50033;
+        background-color: #88b8fe40;
         .badge.new {
-            background-color: #ffd500;
-            color: #4d5154;
+            background-color: #0c6ffc;
+            color: #ffffff;
         }
         .highlight-bar {
             float: right;
@@ -34,7 +34,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #131314;
+    // background-color: #131314;
+    background-color: #191f2d;
     .title {
         color: white;
         text-shadow: 2px 2px 103px black;
@@ -53,7 +54,7 @@
 }
 @media (min-width:768px) {
     .hero-container-bg .main {
-        height: 600px;
+        //height: 600px;
         display: flex;
         align-items: center;
     }

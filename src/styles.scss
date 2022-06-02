@@ -24,9 +24,10 @@ body, p, span, input, label, textarea, h4, h5, h6, ul li, a, li a {
     font-style: normal;
     font-display: swap;
 }
-input, select, .card {
-    border-radius: 0 !important;
-}
+//css rules for making the app loke sharper
+// input, select, .card {
+//     border-radius: 0 !important;
+// }
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
@@ -115,7 +116,8 @@ input::placeholder {
     color: #89b9ff;
 }
 .dark-bg {
-    background-color: #131314;
+    // background-color: #131314;
+    background-color: #191f2d;
 }
 .navbar {
     z-index: 2;

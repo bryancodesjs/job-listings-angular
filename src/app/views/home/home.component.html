@@ -1,7 +1,7 @@
-<div [style]="'background-image:url(/assets/img/hero-slideshow/' + backgroundCode + '.webp)'" class="container-fluid hero-container-bg">
+<div [style]="'background-image:url(/assets/img/hero-slideshow/' + '.webp)'" class="container-fluid hero-container-bg">
     <div class="container main animate__animated animate__fadeIn">
         <div class="row text-center pt-5 pb-5">
-            <div class="col-md-12 col-lg-9 mx-auto pt-5 pb-5">
+            <div class="col-auto pt-4 pb-4">
                 <h1 class="title">
                     <strong>
                         Mas flexibilidad. La posición que buscas. Una nueva carrera. 
@@ -12,7 +12,7 @@
                     Magnet es el lugar donde el talento y las empresas se atraen y conectan.
                 </h4> -->
                 <!-- barra de busqueda y filtrado -->
-                <div class="w-100 mt-4">
+                <div class="w-100 mt-4 mb-3">
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-text floating h-100" id="basic-addon1"><i class="bi bi-search"></i></span>
@@ -23,15 +23,15 @@
             </div>
         </div>
     </div>
-    <div class="container animate__animated animate__fadeIn">
+    <!-- <div class="container animate__animated animate__fadeIn">
         <div class="row">
-            <div class="col-md-12 col-lg-9 mx-auto">
+            <div class="col-auto">
                 <div class="d-flex justify-content-end">
                     <div class="credits">Imagen de <em>pexels.com</em></div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 <div class="container-fluid" (window:scroll)="logScroll($event)">
     <div class="container animate__animated animate__fadeIn">
@@ -66,9 +66,9 @@
                                 <p class="mb-0">{{job.date}}</p>
                             </div>
                             <div class="col-md-3 d-flex align-items-center justify-content-end">
-                                <span class="badge new" *ngIf="job.date == todaysDate"><strong>NUEVO</strong></span>
+                                <span class="badge new" *ngIf="job.date == todaysDate"><strong>HOY</strong></span>
                             </div>
-                            <div class="highlight-bar"></div>
+                            <!-- <div class="highlight-bar"></div> -->
                         </div>
                     </div>
                 </div>
