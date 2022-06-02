@@ -1,4 +1,4 @@
-<div [style]="'background-image:url(/assets/img/hero-slideshow/' + backgroundCode + '.webp)'" [class]=" 'container-fluid hero-container-bg'">
+<div [style]="'background-image:url(/assets/img/hero-slideshow/' + backgroundCode + '.webp)'" class="container-fluid hero-container-bg">
     <div class="container main animate__animated animate__fadeIn">
         <div class="row text-center pt-5 pb-5">
             <div class="col-md-12 col-lg-9 mx-auto pt-5 pb-5">
@@ -16,7 +16,7 @@
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-text floating h-100" id="basic-addon1"><i class="bi bi-search"></i></span>
-                            <input type="text" class="form-control" [(ngModel)]="filter" placeholder="Desarrollador">
+                            <input type="text" class="form-control" [(ngModel)]="filter" placeholder="Desarrollador" autofocus>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
         </div>
         <div class="row" *ngIf="activeJobs.length != 0">
             <div class="col-md-12 col-lg-9 mx-auto animate__animated animate__fadeInUp">
-                <div class="d-flex justify-content-between mb-4 mt-4">
+                <div class="d-flex justify-content-between mb-4 mt-5">
                     <h4 class="float-start mb-0"><strong>Vacantes</strong></h4>
                     <!-- <div>
                         <select name="" id="" class="form-select float-end mb-2">

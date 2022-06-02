@@ -1,6 +1,13 @@
 .nav-item {
     padding: 0rem 0.73rem;
 }
-.navbar-brand img {
-    width: 110px;
+.navbar-brand {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    img {
+        width: 110px;
+    position: relative;
+    transform: translate(0px, 5px);
+    }
 }
