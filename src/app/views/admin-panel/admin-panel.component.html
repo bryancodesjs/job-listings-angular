@@ -1,4 +1,4 @@
-<div class="container-fluid bg-light h-100 animate__animated animate__fadeIn">
+<div class="container-fluid bg-light h-100 animate__animated animate__fadeIn" *ngIf="auth.userData | async">
     <div class="container">
         <section class="pt-4 pb-4">
             <h4><strong>Panel Administrativo</strong></h4>
@@ -14,3 +14,5 @@
         </section>
     </div>
 </div>
+
+<app-login *ngIf="!(auth.userData | async)"></app-login>

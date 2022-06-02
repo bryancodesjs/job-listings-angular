@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JobServiceService } from 'src/app/services/job-service.service';
 import { Job } from 'src/app/models/job.model';
-
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-new-job',
   templateUrl: './new-job.component.html',
@@ -47,7 +47,7 @@ export class NewJobComponent implements OnInit {
   }
   requirementsInMemory: any[] = [];
 
-  constructor(private _jobservice: JobServiceService) { }
+  constructor(private _jobservice: JobServiceService, public auth: AuthService) { }
 
   ngOnInit(): void {
   }
