@@ -96,7 +96,8 @@
                                 </div>
                                 <div class="card-body bg-light" *ngIf="job.status == false">
                                     <h5>Vacante no disponible</h5>
-                                    <small>El anunciante ha deshabilitado esta vacante temporalmente.</small>
+                                    <small *ngIf="job.deleted == false">El anunciante ha deshabilitado esta vacante temporalmente.</small>
+                                    <small *ngIf="job.deleted == true">El anunciante ha deshabilitado esta vacante permanentemente.</small>
                                 </div>
                             </div>
                         </div>  
