@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="container animate__animated animate__fadeIn">
         <div class="row pt-5 pb-5">
-            <div class="col-md-12 col-lg-9 mx-auto pt-5" *ngIf="notFound && loading">
+            <div class="col-12 pt-5" *ngIf="notFound && loading">
                 <div class="d-flex justify-content-center align-items-center flex-column">
                     <div class="spinner-border" role="status">
                         <span class="visually-hidden">Loading...</span>
@@ -9,10 +9,10 @@
                 </div>
             </div>
             <!-- job not found-->
-            <div class="col-md-12 col-lg-9 mx-auto" *ngIf="notFound && !loading">
+            <div class="col-12" *ngIf="notFound && !loading">
                 <app-not-found></app-not-found>
             </div>
-            <div class="col-md-12 col-lg-9 mx-auto" *ngIf="!notFound && !loading">
+            <div class="col-12" *ngIf="!notFound && !loading">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item"><a href="#"><i class="bi bi-chevron-left"></i> Volver al listado de vacantes</a></li>
@@ -23,7 +23,7 @@
                     <small class="text-uppercase">{{job.date}}</small>
                 </div>
                 <div class="row">
-                    <div class="col-lg-9 col-md-7">
+                    <div class="col-lg-8 col-md-7">
                         <div class="block">
                             <h2><strong>{{job.title}} <span *ngIf="job.isremote">- Remoto</span><span *ngIf="!job.isremote">- Presencial</span></strong></h2>
                         </div>
@@ -38,28 +38,28 @@
                                 {{job.description}}
                             </p>
                         </div>
-                        <div class="block">
+                        <div class="block" *ngIf="job.requirements">
                             <h5>Requisitos</h5>
                             <ul>
                                 <li class="text-capitalize" *ngFor="let req of job.requirements">{{req.name}}</li>
                             </ul>
                         </div>
-                        <div class="block">
+                        <div class="block" *ngIf="job.benefits">
                             <h5>Beneficios</h5>
                             <ul>
                                 <li class="text-capitalize" *ngFor="let ben of job.benefits">{{ben.name}}</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-12">
+                    <div class="col-lg-3 ms-lg-auto">
                         <div class="block">
                             <div class="card">
                                 <div class="card-body bg-light" *ngIf="job.status == true">
                                     <small class="text-muted text-uppercase">Empresa</small>
                                     <h5 class="mb-4">{{job.company}}</h5>
-                                    <a target="_blank" class="btn btn-primary w-100" *ngIf="job.link != '' " href="{{job.link}}">Ir al sitio de la vacante <i class="ms-1 bi bi-box-arrow-up-right"></i></a>
-                                    <a target="_blank" class="btn btn-primary w-100" *ngIf="job.email != '' " href="mailto:{{job.link}}">Aplica via email <i class="ms-1 bi bi-envelope-check"></i></a>
-                                    <label class="mt-2">Ó envia tu CV a <span class="text-primary">{{job.email}}</span></label>
+                                    <a target="_blank" class="btn btn-primary w-100" *ngIf="job.link != '' " href="{{job.link}}">Aplicar <i class="ms-1 bi bi-box-arrow-up-right"></i></a>
+                                    <a target="_blank" class="btn btn-primary w-100" *ngIf="job.link == '' " href="mailto:{{job.email}}">Aplica via email <i class="ms-1 bi bi-envelope-check"></i></a>
+                                    <label *ngIf="job.link == '' " class="mt-2">Ó envia tu CV a <span class="text-primary">{{job.email}}</span></label>
                                     <br>
                                 </div>
                                 <div class="card-body bg-light" *ngIf="job.status == false">

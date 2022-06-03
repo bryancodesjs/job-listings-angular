@@ -28,6 +28,8 @@ import { QuestionsComponent } from './views/registration-form/questions/question
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { StringFilterPipe } from './pipes/string-filter.pipe';
+import { TermsComponent } from './views/terms/terms.component';
+import { PrivacyComponent } from './views/privacy/privacy.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +47,9 @@ import { StringFilterPipe } from './pipes/string-filter.pipe';
     MyJobsComponent,
     RegistrationFormComponent,
     QuestionsComponent,
-    StringFilterPipe
+    StringFilterPipe,
+    TermsComponent,
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,9 @@ import { HomeComponent } from './views/home/home.component';
 import { JobComponent } from './views/job/job.component';
 import { LoginComponent } from './views/login/login.component';
 import { NewJobComponent } from './views/new-job/new-job.component';
+import { PrivacyComponent } from './views/privacy/privacy.component';
 import { RegistrationFormComponent } from './views/registration-form/registration-form.component';
+import { TermsComponent } from './views/terms/terms.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,7 +19,9 @@ const routes: Routes = [
   {path: 'courses', component: CoursesComponent},
   {path:'about', component: AboutComponent},
   {path: 'job/:id', component: JobComponent},
-  {path: 'registration-form', component: RegistrationFormComponent}
+  {path: 'registration-form', component: RegistrationFormComponent},
+  {path: 'terms', component: TermsComponent},
+  {path: 'privacy', component: PrivacyComponent}
 ];
 
 @NgModule({
