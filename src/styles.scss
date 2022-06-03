@@ -54,7 +54,7 @@ app-root {
     display: flex;
     flex-flow: column;
 }
-app-admin-panel, app-login, app-registration-form{
+app-admin-panel, app-login, app-registration-form, app-job{
     flex: 1;
 }
 @media screen and (max-width:575px){

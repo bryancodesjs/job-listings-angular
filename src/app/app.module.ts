@@ -30,6 +30,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { StringFilterPipe } from './pipes/string-filter.pipe';
 import { TermsComponent } from './views/terms/terms.component';
 import { PrivacyComponent } from './views/privacy/privacy.component';
+//clipboard
+import { ClipboardModule } from 'ngx-clipboard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +61,8 @@ import { PrivacyComponent } from './views/privacy/privacy.component';
     NgxPaginationModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    ClipboardModule
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy}

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { JobServiceService } from 'src/app/services/job-service.service';
 import { map } from 'rxjs/operators';
+
 @Component({
   selector: 'app-job',
   templateUrl: './job.component.html',
@@ -13,7 +14,10 @@ export class JobComponent implements OnInit {
   notFound = true;
   loading = true;
   titleToAscii = '';
-  constructor(private _activatedRoute: ActivatedRoute, private _JobService: JobServiceService) { }
+  constructor(
+    private _activatedRoute: ActivatedRoute, 
+    private _JobService: JobServiceService
+    ) { }
 
   ngOnInit(): void {
     this.retrieveId();
@@ -48,6 +52,9 @@ export class JobComponent implements OnInit {
   }
   convertTitleToASC(){
     this.titleToAscii =  this.job.title.replace(/ /g, "%20")
-    console.log(this.titleToAscii)
+  }
+  copyURL(){
+    const str = 'https://jobcafe.me/#/job/' + this.job.key
+    //this._clipboard.copy(str)
   }
 }

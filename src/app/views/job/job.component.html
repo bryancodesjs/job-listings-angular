@@ -63,9 +63,9 @@
                                     <br>
                                     <!-- share this position -->
                                     <div class="mt-4">
-                                        <h6>Compartir</h6>
-                                        <div class="d-flex">
-                                            <div class="share-btn-wrap me-2" placement="top" ngbTooltip="Compartir enlace">
+                                        <small class="text-muted text-uppercase">Compartir</small>
+                                        <div class="d-flex mt-2">
+                                            <div ngxClipboard [cbContent]="'https://jobcafe.me/#/job/' + job.key" class="share-btn-wrap me-2" placement="top" ngbTooltip="Compartir enlace">
                                                 <div class="share-btn">
                                                     <i class="bi bi-link-45deg"></i>
                                                 </div>
@@ -80,11 +80,16 @@
                                                     <i class="bi bi-whatsapp"></i>
                                                 </div>
                                             </a>
-                                            <div class="share-btn-wrap me-2" placement="top" ngbTooltip="Compartir en Telegram">
+                                            <a  
+                                                target="_blank"
+                                                href="https://t.me/share/url?url=https%3A%2F%2Fjobcafe.me%2F%23%2Fjob%2F{{job.key}}&text=Hola,%20creo%20que%20esta%20vacante%20como%20{{titleToAscii}}%20podr%C3%ADa%20interesarte"
+                                                class="share-btn-wrap me-2" 
+                                                placement="top" 
+                                                ngbTooltip="Compartir en Telegram">
                                                 <div class="share-btn social">
                                                     <i class="bi bi-telegram"></i>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
                                         
                                     </div>
