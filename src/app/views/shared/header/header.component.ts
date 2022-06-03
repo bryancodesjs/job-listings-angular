@@ -12,7 +12,6 @@ export class HeaderComponent implements OnInit {
   constructor(public auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    console.log(window.scrollY)
   }
   signOut(){
     localStorage.removeItem('magnetUserRef');

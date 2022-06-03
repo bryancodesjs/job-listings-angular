@@ -1,4 +1,4 @@
-<div [style]="'background-image:url(/assets/img/hero-slideshow/' + '.webp)'" class="container-fluid hero-container-bg">
+<div class="container-fluid hero-container-bg">
     <div class="container main animate__animated animate__fadeIn">
         <div class="row text-center pt-5 pb-5">
             <div class="col-auto pt-4 pb-4">
@@ -34,14 +34,14 @@
     </div> -->
 </div>
 <div class="container-fluid" (window:scroll)="logScroll($event)">
-    <div class="container animate__animated animate__fadeIn">
+    <div class="container animate__animated animate__fadeIn mt-5 mb-5">
         <div class="d-flex justify-content-center" *ngIf="activeJobs.length == 0">
             <div class="spinner-border" role="status">
             </div>
         </div>
         <div class="row" *ngIf="activeJobs.length != 0">
             <div class="col-md-12 col-lg-9 mx-auto animate__animated animate__fadeInUp">
-                <div class="d-flex justify-content-between mb-4 mt-5">
+                <div class="d-flex justify-content-between mb-4">
                     <h4 class="float-start mb-0"><strong>Vacantes</strong></h4>
                     <!-- <div>
                         <select name="" id="" class="form-select float-end mb-2">
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-flex-justify-content-center mt-3">
+                <div *ngIf="activeJobs.length > 9" class="d-flex-justify-content-center mt-3">
                     <pagination-controls (pageChange)="p = $event" id="vacantes"
                     [previousLabel]="labels.previousLabel"
                     [nextLabel]="labels.nextLabel"

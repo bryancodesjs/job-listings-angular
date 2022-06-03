@@ -84,6 +84,22 @@
                             <input [(ngModel)]="nuevoRegistro.email" type="text" [class]="hasEmail? 'form-control' : 'form-control is-invalid'">
                             <label *ngIf="!hasEmail" class="text-danger"><small>Por favor indica tu correo electrónico</small></label>
                         </div>
+                        <div class="row g-2">
+                            <div class="col-8">
+                                <div class="form-group mb-3">
+                                    <label>Teléfono</label>
+                                    <input [(ngModel)]="nuevoRegistro.phone" type="phone" [class]="hasPhone? 'form-control' : 'form-control is-invalid'" placeholder="809-xxx-xxxx">
+                                    <label *ngIf="!hasPhone" class="text-danger"><small>Por favor indica un teléfono</small></label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group mb-3">
+                                    <label>Ext.</label>
+                                    <input type="phone" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-divider"></div>
                         <div class="form-group mb-3">
                             <label for="">Sitio Web</label>
                             <input [(ngModel)]="nuevoRegistro.website" type="text" class="form-control" placeholder="ejemplo.com">

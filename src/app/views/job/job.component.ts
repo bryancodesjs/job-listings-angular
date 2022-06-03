@@ -40,6 +40,7 @@ export class JobComponent implements OnInit {
       } else {
         this.notFound = false;
         this.loading = false;
+        // console.log(this.job)
       }
     });
   }

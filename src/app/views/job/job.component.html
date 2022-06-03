@@ -51,14 +51,20 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-5">
+                    <div class="col-12">
                         <div class="block">
                             <div class="card">
-                                <div class="card-body bg-light">
+                                <div class="card-body bg-light" *ngIf="job.status == true">
                                     <small class="text-muted text-uppercase">Empresa</small>
                                     <h5 class="mb-4">{{job.company}}</h5>
-                                    <button class="btn primary w-100">Aplicar</button>
+                                    <a target="_blank" class="btn btn-primary w-100" *ngIf="job.link != '' " href="{{job.link}}">Ir al sitio de la vacante <i class="ms-1 bi bi-box-arrow-up-right"></i></a>
+                                    <a target="_blank" class="btn btn-primary w-100" *ngIf="job.email != '' " href="mailto:{{job.link}}">Aplica via email <i class="ms-1 bi bi-envelope-check"></i></a>
+                                    <label class="mt-2">Ó envia tu CV a <span class="text-primary">{{job.email}}</span></label>
                                     <br>
+                                </div>
+                                <div class="card-body bg-light" *ngIf="job.status == false">
+                                    <h5>Vacante no disponible</h5>
+                                    <small>El anunciante ha deshabilitado esta vacante temporalmente.</small>
                                 </div>
                             </div>
                         </div>  

@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
     ).subscribe (data => {
       var toFilter = data;
       //only show the requests which arent active and arent denied
-      var filtered = toFilter.filter(a => a.published == true);
+      var filtered = toFilter.filter(a => a.published == true && a.status == true);
       //console.log(filtered);
       this.activeJobs = filtered;
       this.activeJobs.reverse();

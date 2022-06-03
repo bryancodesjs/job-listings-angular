@@ -24,6 +24,7 @@ export class RegistrationFormComponent implements OnInit {
     linkedin: '',
     location: '',
     email: '',
+    phone: '',
     registrationDate: ''
   }
 
@@ -40,6 +41,7 @@ export class RegistrationFormComponent implements OnInit {
   hasName = true;
   hasRNC = true;
   hasEmail = true;
+  hasPhone = true;
   hasLocation = true;
   hasLinkedin = true;
   
@@ -78,6 +80,9 @@ export class RegistrationFormComponent implements OnInit {
     if(this.nuevoRegistro.email == '') {
       this.hasEmail = false;
     }
+    if(this.nuevoRegistro.phone == '') {
+      this.hasPhone = false;
+    }
     if(!this.esEmpresa && this.nuevoRegistro.linkedin == '') {
       this.hasLinkedin = false;
     }
@@ -103,6 +108,7 @@ export class RegistrationFormComponent implements OnInit {
     this.hasName = true;
     this.hasRNC = true;
     this.hasEmail = true;
+    this.hasPhone = true;
     this.hasLocation = true;
     this.hasLinkedin = true;
   }

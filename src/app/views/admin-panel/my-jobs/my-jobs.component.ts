@@ -62,4 +62,8 @@ export class MyJobsComponent implements OnInit {
         break;
     }
   }
+
+  deleteJob(jobkey:string){
+    this._JobService.delete(jobkey);
+  }
 }

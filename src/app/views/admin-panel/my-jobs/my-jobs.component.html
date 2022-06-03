@@ -11,12 +11,12 @@
                 <label><small>Titulo</small></label>
                 <p><a routerLink="/job/{{job.key}}" placement="top" ngbTooltip="Ir a la publicación" href="">{{job.title}} <i class="bi bi-box-arrow-up-right"></i></a></p>
             </div>
-            <div class="col-lg-2 col-sm-3">
+            <!-- <div class="col-lg-2 col-sm-3">
                 <label>Visitas
                     <small class="text-secondary" placement="top" ngbTooltip="Cantidad de usuarios que han visto tu publicación"><i class="bi bi-info-circle-fill"></i></small>
                 </label>
                 <p>{{job.visits}} <i class="bi bi-bar-chart-fill"></i></p>
-            </div>
+            </div> -->
             <div class="col-lg-2 col-sm-4">
                 <label>
                     <small>Estado</small>
@@ -34,7 +34,7 @@
                 <br>
                 <div class="btn-group btn-group-sm mb-3" role="group" aria-label="Basic outlined example">
                     <!-- <button type="button" class="btn btn-outline-primary">Editar</button> -->
-                    <button type="button" class="btn btn-outline-primary">Eliminar</button>
+                    <button (click)="deleteJob(job.key)" type="button" class="btn btn-outline-danger">Eliminar</button>
                 </div>
             </div>
         </div>
