@@ -12,6 +12,7 @@ export class JobComponent implements OnInit {
   job: any = [];
   notFound = true;
   loading = true;
+  titleToAscii = '';
   constructor(private _activatedRoute: ActivatedRoute, private _JobService: JobServiceService) { }
 
   ngOnInit(): void {
@@ -40,8 +41,13 @@ export class JobComponent implements OnInit {
       } else {
         this.notFound = false;
         this.loading = false;
+        this.convertTitleToASC()
         // console.log(this.job)
       }
     });
+  }
+  convertTitleToASC(){
+    this.titleToAscii =  this.job.title.replace(/ /g, "%20")
+    console.log(this.titleToAscii)
   }
 }
