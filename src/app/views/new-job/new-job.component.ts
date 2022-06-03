@@ -30,7 +30,8 @@ export class NewJobComponent implements OnInit {
     date: '',
     published: true,
     location: '',
-    status: true
+    status: true,
+    deleted: false
   }
 
   //states for benefits

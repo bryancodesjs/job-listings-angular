@@ -26,7 +26,7 @@ export class MyJobsComponent implements OnInit {
     ).subscribe (data => {
       var toFilter = data;
       //only show the requests which arent active and arent denied
-      var filtered = toFilter.filter(a => a.author == this.sessionUser);
+      var filtered = toFilter.filter(a => a.author == this.sessionUser && a.deleted == false);
       //console.log(filtered);
       this.activeJobs = filtered;
       this.activeJobs.reverse();
@@ -62,8 +62,17 @@ export class MyJobsComponent implements OnInit {
         break;
     }
   }
-
-  deleteJob(jobkey:string){
-    this._JobService.delete(jobkey);
+  showModal = false;
+  deleteJob(job: any){
+    this.jobInMemory = job
+    this.showModal = true;
+  }
+  confirmDelete(){
+    this.jobInMemory.status = false;
+    this.jobInMemory.deleted = true;
+    this._JobService.update(this.jobInMemory.key, this.jobInMemory)
+  }
+  hideModal(){
+    this.showModal = false;
   }
 }

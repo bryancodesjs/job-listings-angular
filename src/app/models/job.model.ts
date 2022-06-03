@@ -16,4 +16,5 @@ export interface Job {
     published?:boolean;
     locoation?:string;
     status?:boolean;
+    deleted?:boolean;
 }

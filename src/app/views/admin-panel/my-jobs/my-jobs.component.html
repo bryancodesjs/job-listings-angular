@@ -1,4 +1,3 @@
-
 <h5 class="mb-4"><strong>Mis Vacantes ({{activeJobs.length}})</strong></h5>
 <div class="card mb-3" *ngFor="let job of activeJobs">
     <div class="card-body">
@@ -29,12 +28,30 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-sm-8">
+            <div class="col-lg-3 col-sm-8 ms-lg-auto">
                 <label><small>Acciones</small></label>
                 <br>
                 <div class="btn-group btn-group-sm mb-3" role="group" aria-label="Basic outlined example">
                     <!-- <button type="button" class="btn btn-outline-primary">Editar</button> -->
-                    <button (click)="deleteJob(job.key)" type="button" class="btn btn-outline-danger">Eliminar</button>
+                    <button (click)="deleteJob(job)" type="button" class="btn btn-outline-danger">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div [class]="showModal? 'modal-bg' : 'modal-bg d-none'">
+    <div class="modal-content animate__animated animate__fadeInUp">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <h5><strong>Eliminar</strong></h5>
+                    <button (click)="hideModal()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <p>Esta vacante será eliminada</p>
+                <div class="d-flex">
+                    <button class="btn btn-transparent me-4" (click)="hideModal()">Atras</button>
+                    <button class="btn btn-danger" (click)="confirmDelete()">Eliminar</button>
                 </div>
             </div>
         </div>
