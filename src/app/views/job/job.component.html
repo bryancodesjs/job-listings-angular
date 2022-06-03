@@ -61,6 +61,33 @@
                                     <a target="_blank" class="btn btn-primary w-100" *ngIf="job.link == '' " href="mailto:{{job.email}}">Aplica via email <i class="ms-1 bi bi-envelope-check"></i></a>
                                     <label *ngIf="job.link == '' " class="mt-2">Ó envia tu CV a <span class="text-primary">{{job.email}}</span></label>
                                     <br>
+                                    <!-- share this position -->
+                                    <div class="mt-4">
+                                        <h6>Compartir</h6>
+                                        <div class="d-flex">
+                                            <div class="share-btn-wrap me-2" placement="top" ngbTooltip="Compartir enlace">
+                                                <div class="share-btn">
+                                                    <i class="bi bi-link-45deg"></i>
+                                                </div>
+                                            </div>
+                                            <a 
+                                                target="_blank"
+                                                href="https://api.whatsapp.com/send?text=Hola,%20creo%20que%20esta%20vacante%20como%20{{titleToAscii}}%20podr%C3%ADa%20interesarte%20https%3A%2F%2Fjobcafe.me%2F%23%2Fjob%2F{{job.key}}"
+                                                class="share-btn-wrap me-2" 
+                                                placement="top" 
+                                                ngbTooltip="Compartir en WhatsApp">
+                                                <div class="share-btn social">
+                                                    <i class="bi bi-whatsapp"></i>
+                                                </div>
+                                            </a>
+                                            <div class="share-btn-wrap me-2" placement="top" ngbTooltip="Compartir en Telegram">
+                                                <div class="share-btn social">
+                                                    <i class="bi bi-telegram"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
                                 </div>
                                 <div class="card-body bg-light" *ngIf="job.status == false">
                                     <h5>Vacante no disponible</h5>
