@@ -1,29 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap');
 /* You can add global styles to this file, and also import other style files */
 //@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css");
 //@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,700;1,300;1,700&display=swap');
-h1, h2, h3, strong span{
-    font-family: kanitbold !important;
+// @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap');
+body {
+    font-family: Rubik !important;
 }
-body, p, span, input, label, textarea, h4, h5, h6, ul li, a, li a {
-    font-family: kanitlight !important;
-}
-@font-face {
-    font-family: 'kanitbold';
-    src: url('/assets/fonts/kanit-bold-webfont.woff2') format('woff2'),
-         url('/assets/fonts/kanit-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+// h1, h2, h3, strong span{
+//     font-family: Kanit !important;
+// }
+// body, p, span, input, label, textarea, h4, h5, h6, ul li, a, li a {
+//     font-family: kanitlight !important;
+// }
+// @font-face {
+//     font-family: 'kanitbold';
+//     src: url('/assets/fonts/kanit-bold-webfont.woff2') format('woff2'),
+//          url('/assets/fonts/kanit-bold-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
 
-@font-face {
-    font-family: 'kanitlight';
-    src: url('/assets/fonts/kanit-light-webfont.woff2') format('woff2'),
-         url('/assets/fonts/kanit-light-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+// @font-face {
+//     font-family: 'kanitlight';
+//     src: url('/assets/fonts/kanit-light-webfont.woff2') format('woff2'),
+//          url('/assets/fonts/kanit-light-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
 //css rules for making the app loke sharper
 // input, select, .card {
 //     border-radius: 0 !important;
@@ -54,7 +59,7 @@ app-root {
     display: flex;
     flex-flow: column;
 }
-app-admin-panel, app-login, app-registration-form, app-job{
+app-admin-panel, app-login, app-registration-form, app-job, app-backoffice{
     flex: 1;
 }
 @media screen and (max-width:575px){
@@ -93,11 +98,6 @@ button.btn-link {
         border-radius: 100%;
         margin-right: 0.5rem;
     }
-    // .caption {
-    //     label {
-
-    //     }
-    // }
 }
 .ngx-pagination {
     display: flex;
@@ -119,9 +119,7 @@ input::placeholder {
     // background-color: #131314;
     background-color: #191f2d;
 }
-.navbar {
-    //z-index: 2;
-}
+
 .modal {
     &-bg {
         top: 0;
@@ -139,4 +137,44 @@ input::placeholder {
         max-width: 400px;
         width: 100%;
     }
+}
+.share-btn-wrap {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    &:active {
+        .share-btn {
+            width: 2.2rem !important;
+            height: 2.2rem !important;
+        }
+    }
+.share-btn {
+    width: 2.2rem;
+    height: 2.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #cfdfff;
+    font-size: 1.5rem;
+    border-radius: 100%;
+    color: #0d6efd;
+    transition: 0.2s ease;
+    cursor: pointer;
+    &.social {
+        font-size: 1.2rem;
+    }
+    &:hover {
+        width: 2.5rem;
+        height: 2.5rem;
+        transition: 0.2s ease;
+    }
+    i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
 }

@@ -32,6 +32,7 @@ import { TermsComponent } from './views/terms/terms.component';
 import { PrivacyComponent } from './views/privacy/privacy.component';
 //clipboard
 import { ClipboardModule } from 'ngx-clipboard';
+import { BackofficeComponent } from './views/backoffice/backoffice.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +52,8 @@ import { ClipboardModule } from 'ngx-clipboard';
     QuestionsComponent,
     StringFilterPipe,
     TermsComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    BackofficeComponent
   ],
   imports: [
     BrowserModule,

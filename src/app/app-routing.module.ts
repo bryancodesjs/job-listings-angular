@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './views/about/about.component';
 import { AdminPanelComponent } from './views/admin-panel/admin-panel.component';
+import { BackofficeComponent } from './views/backoffice/backoffice.component';
 import { CoursesComponent } from './views/courses/courses.component';
 import { HomeComponent } from './views/home/home.component';
 import { JobComponent } from './views/job/job.component';
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path: 'job/:id', component: JobComponent},
   {path: 'registration-form', component: RegistrationFormComponent},
   {path: 'terms', component: TermsComponent},
-  {path: 'privacy', component: PrivacyComponent}
+  {path: 'privacy', component: PrivacyComponent},
+  {path: 'backoffice', component: BackofficeComponent}
 ];
 
 @NgModule({

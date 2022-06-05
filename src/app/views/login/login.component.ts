@@ -51,6 +51,7 @@ export class LoginComponent implements OnInit {
         } else {
           this.saveUserInMemory()
           this.router.navigateByUrl('/admin-panel')
+          window.location.reload();
         }
       },2000)
     }
