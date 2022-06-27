@@ -27,7 +27,7 @@
             <a class="nav-link" routerLink="admin-panel">Mi Cuenta</a>
           </li>  -->
         </ul>
-        <button class="btn btn-primary ms-2" routerLink="admin-panel"*ngIf="!(auth.userData | async)">Iniciar Sesión</button>
+        <button class="btn btn-primary ms-2" routerLink="admin-panel"*ngIf="!(auth.userData | async)">Publicar Vacante</button>
         <ul class="navbar-nav" *ngIf="auth.userData | async">
           <li class="nav-item" ngbDropdown>
             <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown2" role="button">

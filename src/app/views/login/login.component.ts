@@ -50,7 +50,8 @@ export class LoginComponent implements OnInit {
           console.log('invalid')
         } else {
           this.saveUserInMemory()
-          this.router.navigateByUrl('/admin-panel')
+          this.router.navigateByUrl('/admin-panel');
+          window.location.reload();
         }
       },2000)
     }

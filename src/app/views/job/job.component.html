@@ -58,7 +58,7 @@
                                     <small class="text-muted text-uppercase">Empresa</small>
                                     <h5 class="mb-4">{{job.company}}</h5>
                                     <a target="_blank" class="btn btn-primary w-100" *ngIf="job.link != '' " href="{{job.link}}">Aplicar <i class="ms-1 bi bi-box-arrow-up-right"></i></a>
-                                    <a target="_blank" class="btn btn-primary w-100" *ngIf="job.link == '' " href="mailto:{{job.email}}">Aplica via email <i class="ms-1 bi bi-envelope-check"></i></a>
+                                    <a target="_blank" class="btn btn-primary w-100" *ngIf="job.link == '' " href="mailto:{{job.email}}?subject=Vacante {{job.title}} via jobcafe.me">Aplica via email <i class="ms-1 bi bi-envelope-check"></i></a>
                                     <label *ngIf="job.link == '' " class="mt-2">Ó envia tu CV a <span class="text-primary">{{job.email}}</span></label>
                                     <br>
                                     <!-- share this position -->

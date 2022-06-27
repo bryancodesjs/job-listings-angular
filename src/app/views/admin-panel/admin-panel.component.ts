@@ -10,7 +10,7 @@ export class AdminPanelComponent implements OnInit {
   constructor(public auth: AuthService) { }
 
   ngOnInit(): void {
-    
+    //window.location.reload();
   }
 
 }

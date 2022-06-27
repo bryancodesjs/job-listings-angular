@@ -1,0 +1,16 @@
+.footer-btn {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+    &.fb {
+        color: dodgerblue;
+        &:hover {
+            color: rgb(95, 175, 254);
+        }
+    }
+    &.ig {
+        color: #ff008d;
+        &:hover {
+            color: #fe8fb3;
+        }
+    }
+}

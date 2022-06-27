@@ -21,7 +21,7 @@ export class NewJobComponent implements OnInit {
     title:  '',
     category: '',
     type: '',
-    isremote: true,
+    isremote: false,
     link: '',
     email: '',
     description: '',
@@ -33,7 +33,27 @@ export class NewJobComponent implements OnInit {
     status: true,
     deleted: false
   }
-
+  resetJob() {
+    this.currentJob.author = <any>'';
+    this.currentJob.visits = 0;
+    this.currentJob.company = '';
+    this.currentJob.title = '';
+    this.currentJob.category = '';
+    this.currentJob.type = '';
+    this.currentJob.isremote = false;
+    this.currentJob.link = '';
+    this.currentJob.email = '';
+    this.currentJob.description = '';
+    this.currentJob.requirements = [{}];
+    this.currentJob.benefits = [{}];
+    this.currentJob.date = '';
+    this.currentJob.published = true;
+    this.currentJob.location = '';
+    this.currentJob.status = true;
+    this.currentJob.deleted = false;
+    this.requirementsInMemory = [];
+    this.BenefitsInMemory = [];
+  }
   //states for benefits
   newBenefit = '';
   singleBenefit = {
@@ -51,6 +71,7 @@ export class NewJobComponent implements OnInit {
   constructor(private _jobservice: JobServiceService, public auth: AuthService) { }
 
   ngOnInit(): void {
+    this.resetJob();
   }
 
   //set all stesp to false
@@ -84,6 +105,7 @@ export class NewJobComponent implements OnInit {
   //clear all to create a new job
   clear(){
     this.resetSteps();
+    this.resetJob();
     this.stepOne = true;
   }
   //job is remote or not?

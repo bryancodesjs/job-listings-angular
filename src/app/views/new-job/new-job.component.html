@@ -45,19 +45,25 @@
                                     <div class="form-group">
                                         <label>Categoría</label>
                                         <select [(ngModel)]="currentJob.category" [class]="noCategory? 'form-select is-invalid':'form-select'">
-                                            <option selected value="Diseño">Diseño</option>
-                                            <option value="Software">Software</option>
-                                            <option value="IT / Devops">IT / Devops</option>
-                                            <option value="RRHH">RRHH</option>
-                                            <option value="Gerencia / Administración">Gerencia / Administración</option>
-                                            <option value="Mecánica">Mecánica</option>
-                                            <option value="Servicio al Cliente">Servicio al Cliente</option>
-                                            <option value="Hotelería / Gastronomía / Turismo">Hotelería / Gastronomía / Turismo</option>
-                                            <option value="Manufactura / Industria">Manufactura / Industria</option>
-                                            <option value="Logística / Almacén">Logística / Almacén</option>
-                                            <option value="Contabilidad / Finanzas">Contabilidad / Finanzas</option>
-                                            <option value="Medicina / Salud">Medicina / Salud</option>
                                             <option value="Belleza">Belleza</option>
+                                            <option value="Cajer@">Cajer@</option>
+                                            <option value="Construcción">Construcción</option>
+                                            <option value="Contabilidad / Finanzas">Contabilidad / Finanzas</option>
+                                            <option selected value="Diseño">Diseño</option>
+                                            <option value="Gerencia / Administración">Gerencia / Administración</option>
+                                            <option value="Hotelería / Gastronomía / Turismo">Hotelería / Gastronomía / Turismo</option>
+                                            <option value="IT / Devops">IT / Devops</option>
+                                            <option value="Logística / Almacén">Logística / Almacén</option>
+                                            <option value="Mecánica">Mecánica</option>
+                                            <option value="Manufactura / Industria">Manufactura / Industria</option>
+                                            <option value="Medicina / Salud">Medicina / Salud</option>
+                                            <option value="Mantenimiento / Limpieza">Mantenimiento / Limpieza</option>
+                                            <option value="Marketing / Ventas">Marketing / Ventas</option>
+                                            <option value="RRHH">RRHH</option>
+                                            <option value="Seguridad">Seguridad</option>
+                                            <option value="Servicio al Cliente">Servicio al Cliente</option>
+                                            <option value="Software">Software</option>
+                                            <option value="Transporte">Transporte</option>
                                             <option value="Otros">Otros</option>
                                         </select>
                                         <label *ngIf="noCategory" class="danger">Recuerde agregar una categoría</label>
@@ -71,6 +77,7 @@
                                             <option value="Medio Tiempo">Medio Tiempo</option>
                                             <option value="Freelance">Freelance</option>
                                             <option value="Contrato">Contrato</option>
+                                            <option value="Varios / Flexible">Varios / Flexible</option>
                                         </select>
                                         <label *ngIf="noType" class="danger">Recuerde agregar un horario</label>
                                     </div>
@@ -87,7 +94,7 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="form-check">
-                                            <input (click)="remote(true)" class="form-check-input" type="radio" name="flexRadioDefault" id="isremote" checked>
+                                            <input (click)="remote(true)" class="form-check-input" type="radio" name="flexRadioDefault" id="isremote">
                                             <label class="form-check-label" for="isremote">
                                             Si
                                             </label>
@@ -95,7 +102,7 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-check">
-                                            <input (click)="remote(false)" class="form-check-input" type="radio" name="flexRadioDefault" id="isnotremote">
+                                            <input (click)="remote(false)" class="form-check-input" type="radio" name="flexRadioDefault" id="isnotremote" checked>
                                             <label class="form-check-label" for="isnotremote">
                                             No
                                             </label>
@@ -106,10 +113,19 @@
                             <div class="form-group">
                                 <h5>Ubicación</h5>
                                 <select [(ngModel)]="currentJob.location" [class]="noLocation? 'form-select is-invalid':'form-select'">
-                                    <option value="Santo Domingo" selected>Santo Domingo</option>
-                                    <option value="Santiago">Santiago</option>
+                                    <option value="Distrito Nacional" selected>Distrito Nacional</option>
+                                    <option value="Santo Domingo Este" selected>Santo Domingo Este</option>
+                                    <option value="Santo Domingo Norte" selected>Santo Domingo Norte</option>
+                                    <option value="Santo Domingo Oeste" selected>Santo Domingo Oeste</option>
+                                    <option value="Barahona">Barahona</option>
                                     <option value="Bavaro">Bavaro</option>
+                                    <option value="La Altagracia">La Altagracia</option>
                                     <option value="La Romana">La Romana</option>
+                                    <option value="La Vega">La Vega</option>
+                                    <option value="Puerto Plata">Puerto Plata</option>
+                                    <option value="San Cristobal">San Cristobal</option>
+                                    <option value="San Pedro de Macorís">San Pedro de Macorís</option>
+                                    <option value="Santiago">Santiago</option>
                                     <option value="Otro">Otro</option>
                                 </select>
                                 <label *ngIf="noLocation" class="danger">Recuerde agregar una ubicación</label>
