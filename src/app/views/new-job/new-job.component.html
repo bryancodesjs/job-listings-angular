@@ -50,6 +50,7 @@
                                             <option value="Construcción">Construcción</option>
                                             <option value="Contabilidad / Finanzas">Contabilidad / Finanzas</option>
                                             <option selected value="Diseño">Diseño</option>
+                                            <option selected value="Doméstica / Ama de casa">Doméstica / Ama de casa</option>
                                             <option value="Gerencia / Administración">Gerencia / Administración</option>
                                             <option value="Hotelería / Gastronomía / Turismo">Hotelería / Gastronomía / Turismo</option>
                                             <option value="IT / Devops">IT / Devops</option>
@@ -131,20 +132,36 @@
                                 <label *ngIf="noLocation" class="danger">Recuerde agregar una ubicación</label>
                             </div>
                             <div class="form-group">
-                                <h5><strong>Enlace para aplicar o email de contacto</strong></h5>
-                                <label for="">Provea un enlace o email que puedan utilizar para contactarle</label>
+                                <h5>
+                                    Enlace web, email o teléfono para aplicar
+                                </h5>
+                                <label for="">
+                                    Provea un 
+                                    <span *ngIf="!emailChosen && !phoneChosen">enlace</span> 
+                                    <span *ngIf="emailChosen && !phoneChosen">email</span> 
+                                    <span *ngIf="!emailChosen && phoneChosen">teléfono</span> 
+                                     que puedan utilizar para contactarle
+                                    </label>
                                 <div class="input-group">
                                     <div ngbDropdown placement="bottom-end" class="d-inline-block">
-                                        <button type="button" class="btn secondary" id="dropdownBasic2" ngbDropdownToggle>{{emailChosen? 'Email' : 'Enlace'}}</button>
+                                        <button type="button" class="btn secondary" id="dropdownBasic2" ngbDropdownToggle>{{emailChosen? 'Email' : phoneChosen? 'Teléfono' : 'Enlace'}}</button>
                                         <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
                                           <button  (click)="chooseContactMethod('link')" ngbDropdownItem>Enlace <i class="bi bi-link-45deg float-end"></i></button>
                                           <button  (click)="chooseContactMethod('email')" ngbDropdownItem>Email <i class="bi bi-envelope float-end"></i></button>
+                                          <button  (click)="chooseContactMethod('telefono')" ngbDropdownItem>Teléfono <i class="bi bi-telephone float-end"></i></button>
                                         </div>
                                     </div>
-                                    <input *ngIf="!emailChosen" [(ngModel)]="currentJob.link" type="text" [class]="noLink? 'form-control is-invalid':'form-control'" placeholder="https://...">
-                                    <input *ngIf="emailChosen" [(ngModel)]="currentJob.email" type="text" [class]="noEmail? 'form-control is-invalid':'form-control'" placeholder="Correo Electrónico">
+                                    <input *ngIf="!emailChosen && !phoneChosen" [(ngModel)]="currentJob.link" type="text" [class]="noLink? 'form-control is-invalid':'form-control'" placeholder="https://...">
+                                    <input *ngIf="emailChosen && !phoneChosen" [(ngModel)]="currentJob.email" type="text" [class]="noEmail? 'form-control is-invalid':'form-control'" placeholder="Correo Electrónico">
+                                    <input *ngIf="!emailChosen && phoneChosen" [(ngModel)]="currentJob.phone" type="text" [class]="noPhone? 'form-control is-invalid':'form-control'" placeholder="(809)--- ----">
                                 </div>
-                                <label *ngIf="noLink" class="danger">Recuerde agregar un enlace o email de contacto</label>
+                                <label *ngIf="noLink || noPhone || noEmail" class="danger">
+                                    Recuerde agregar un 
+                                    <span *ngIf="!emailChosen && !phoneChosen">enlace</span> 
+                                    <span *ngIf="emailChosen && !phoneChosen">email</span> 
+                                    <span *ngIf="!emailChosen && phoneChosen">teléfono</span> 
+                                    de contacto
+                                </label>
                                 <!-- <input [(ngModel)]="currentJob.link" type="text" [class]="noLink? 'form-control is-invalid':'form-control'">
                                 <label *ngIf="noLink" class="danger">Recuerde agregar un enlace o email de contacto</label> -->
                             </div>

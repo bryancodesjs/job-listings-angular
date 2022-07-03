@@ -14,6 +14,8 @@ export class MyJobsComponent implements OnInit {
   //job in memory for updates
   jobInMemory: any = []
 
+  deleted = false;
+
   constructor(private _JobService: JobServiceService) { }
 
   ngOnInit(): void {
@@ -71,8 +73,10 @@ export class MyJobsComponent implements OnInit {
     this.jobInMemory.status = false;
     this.jobInMemory.deleted = true;
     this._JobService.update(this.jobInMemory.key, this.jobInMemory)
+    this.deleted = true;
   }
   hideModal(){
     this.showModal = false;
+    this.deleted = false;
   }
 }

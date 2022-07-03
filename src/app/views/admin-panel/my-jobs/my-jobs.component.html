@@ -43,7 +43,8 @@
 <div [class]="showModal? 'modal-bg' : 'modal-bg d-none'">
     <div class="modal-content animate__animated animate__fadeInUp">
         <div class="card">
-            <div class="card-body">
+            <!-- if the job hasn't been deleted -->
+            <div class="card-body" *ngIf="!deleted">
                 <div class="d-flex justify-content-between">
                     <h5><strong>Eliminar</strong></h5>
                     <button (click)="hideModal()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -52,6 +53,13 @@
                 <div class="d-flex">
                     <button class="btn btn-transparent me-4" (click)="hideModal()">Atras</button>
                     <button class="btn btn-danger" (click)="confirmDelete()">Eliminar</button>
+                </div>
+            </div>
+            <!-- once the job posting has been deleted -->
+            <div class="card-body" *ngIf="deleted">
+                <div class="d-flex justify-content-between">
+                    <h5><strong>La vacante ha sido eliminada</strong></h5>
+                    <button (click)="hideModal()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
             </div>
         </div>
