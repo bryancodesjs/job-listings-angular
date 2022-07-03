@@ -13,6 +13,7 @@ export class NewJobComponent implements OnInit {
   jobSent = false;
   //variable to indicate whether email or link was chosen as contact method
   emailChosen = false;
+  phoneChosen = false;
 
   currentJob = {
     author: <any>'',
@@ -24,6 +25,7 @@ export class NewJobComponent implements OnInit {
     isremote: false,
     link: '',
     email: '',
+    phone: '',
     description: '',
     requirements: [{}],
     benefits: [{}],
@@ -150,6 +152,7 @@ export class NewJobComponent implements OnInit {
   noLocation = false;
   noLink = false;
   noEmail = false;
+  noPhone = false;
   noDescription = false;
   //reset validation variables
   resetValidations(){
@@ -179,15 +182,19 @@ export class NewJobComponent implements OnInit {
     if (this.currentJob.location == ''){
       this.noLocation = true;
     }
-    //choose whether to validate link or email
-    if(this.emailChosen){
+    //choose whether to validate link, phone or email
+    if(this.emailChosen && !this.phoneChosen){
       if(this.currentJob.email == ''){
         this.noEmail = true;
       }
-    } else {
+    } else if (!this.emailChosen && !this.phoneChosen) {
       //if email input wasn't chosen, the link will be validated
       if (this.currentJob.link == ''){
         this.noLink = true;
+      }
+    } else if(!this.emailChosen && this.phoneChosen) {
+      if (this.currentJob.phone == ''){
+        this.noPhone = true;
       }
     }
     if (this.currentJob.description == ''){
@@ -202,14 +209,30 @@ export class NewJobComponent implements OnInit {
       case 'email':
         console.log('you chose email')
         this.emailChosen = true;
+        this.phoneChosen = false;
+        this.currentJob.link = '';
+        this.currentJob.phone = '';
         break;
       case 'link':
         console.log('you chose link')
         this.emailChosen = false;
+        this.phoneChosen = false;
+        this.currentJob.email = '';
+        this.currentJob.phone = '';
+        break;
+      case 'telefono':
+        console.log('you chose telephone')
+        this.emailChosen = false;
+        this.phoneChosen = true;
+        this.currentJob.link = '';
+        this.currentJob.email = '';
         break;
       default:
         console.log('default')
         this.emailChosen = false;
+        this.phoneChosen = false;
+        this.currentJob.link = '';
+        this.currentJob.phone = '';
         break;
     }
   }

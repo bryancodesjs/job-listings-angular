@@ -46,7 +46,7 @@ export class JobComponent implements OnInit {
         this.notFound = false;
         this.loading = false;
         this.convertTitleToASC()
-        // console.log(this.job)
+        console.log(this.job)
       }
     });
   }

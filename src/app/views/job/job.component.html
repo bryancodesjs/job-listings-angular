@@ -57,9 +57,11 @@
                                 <div class="card-body bg-light" *ngIf="job.status == true">
                                     <small class="text-muted text-uppercase">Empresa</small>
                                     <h5 class="mb-4">{{job.company}}</h5>
-                                    <a target="_blank" class="btn btn-primary w-100" *ngIf="job.link != '' " href="{{job.link}}">Aplicar <i class="ms-1 bi bi-box-arrow-up-right"></i></a>
-                                    <a target="_blank" class="btn btn-primary w-100" *ngIf="job.link == '' " href="mailto:{{job.email}}?subject=Vacante {{job.title}} via jobcafe.me">Aplica via email <i class="ms-1 bi bi-envelope-check"></i></a>
-                                    <label *ngIf="job.link == '' " class="mt-2">Ó envia tu CV a <span class="text-primary">{{job.email}}</span></label>
+                                    <a target="_blank" class="btn btn-primary w-100" *ngIf="job.link != '' && job?.phone == undefined " href="{{job.link}}">Aplicar <i class="ms-1 bi bi-box-arrow-up-right"></i></a>
+                                    <a target="_blank" class="btn btn-primary w-100" *ngIf="job.link == '' && job?.phone == undefined " href="mailto:{{job.email}}?subject=Vacante {{job.title}} via jobcafe.me">Aplica via email <i class="ms-1 bi bi-envelope-check"></i></a>
+                                    <a target="_blank" class="btn btn-primary w-100" *ngIf="job?.phone != undefined " href="https://wa.me/1{{job.phone}}?text=Hola,%20me%20interesa%20aplicar%20para%20la%20vacante%20como%20{{titleToAscii}}%20publicada%20en%20jobcafe.me">Aplica via WhatsApp <i class="bi bi-whatsapp"></i></a>
+                                    <!-- <a target="_blank" class="btn btn-primary w-100" *ngIf="job.link == ''" href="https://api.whatsapp.com/send?text=Hola,%20creo%20que%20esta%20vacante%20como%20{{titleToAscii}}%20podr%C3%ADa%20interesarte%20https%3A%2F%2Fjobcafe.me%2F%23%2Fjob%2F{{job.key}}">Aplica via WhatsApp <i class="bi bi-whatsapp"></i></a> -->
+                                    <label *ngIf="job.link == '' && job?.phone == undefined " class="mt-2">Ó envia tu CV a <span class="text-primary">{{job.email}}</span></label>
                                     <br>
                                     <!-- share this position -->
                                     <div class="mt-4">
@@ -96,8 +98,8 @@
                                 </div>
                                 <div class="card-body bg-light" *ngIf="job.status == false">
                                     <h5>Vacante no disponible</h5>
-                                    <small *ngIf="job.deleted == false">El anunciante ha deshabilitado esta vacante temporalmente.</small>
-                                    <small *ngIf="job.deleted == true">El anunciante ha deshabilitado esta vacante permanentemente.</small>
+                                    <p *ngIf="job.deleted == false">El anunciante ha deshabilitado esta vacante temporalmente.</p>
+                                    <p *ngIf="job.deleted == true">El anunciante ha deshabilitado esta vacante permanentemente. Probablemente la posición ya ha sido cubierta o pasó la fecha límite para aplicar.</p>
                                 </div>
                             </div>
                         </div>  
