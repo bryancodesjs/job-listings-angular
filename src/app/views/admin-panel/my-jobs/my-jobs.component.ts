@@ -40,7 +40,7 @@ export class MyJobsComponent implements OnInit {
     switch(newStatus){
       case true:
       if(newStatus == job.status){
-        console.log('the job is already active')
+        //console.log('the job is already active')
       } else {
         //assign new value
         this.jobInMemory.status = true;
@@ -50,9 +50,9 @@ export class MyJobsComponent implements OnInit {
       break;
       case false:
         if(newStatus == job.status){
-          console.log('the job is already closed')
+          //console.log('the job is already closed')
         } else {
-          console.log('job successfully closed')
+          //console.log('job successfully closed')
           //assign new value
           this.jobInMemory.status = false;
           //send the update
@@ -60,7 +60,7 @@ export class MyJobsComponent implements OnInit {
         }
         break;
       default:
-        console.log('default')
+        //console.log('default')
         break;
     }
   }

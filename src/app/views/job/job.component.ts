@@ -14,6 +14,11 @@ export class JobComponent implements OnInit {
   notFound = true;
   loading = true;
   titleToAscii = '';
+
+  showLink = false;
+  showEmail = false;
+  showPhone = false;
+
   constructor(
     private _activatedRoute: ActivatedRoute, 
     private _JobService: JobServiceService
@@ -46,7 +51,19 @@ export class JobComponent implements OnInit {
         this.notFound = false;
         this.loading = false;
         this.convertTitleToASC()
-        console.log(this.job)
+        //console.log(this.job)
+        //hardcoded conditional for showing either phone, email or link
+        if(this.job.phone == undefined || this.job.phone == null || this.job.phone == '') {
+          if(this.job.email != '') {
+            this.showEmail = true;
+            //console.log('showing email...')
+          } else {
+            this.showLink = true;
+            //console.log('showing link...')
+          }
+        } else {
+          this.showPhone = true;
+        }
       }
     });
   }

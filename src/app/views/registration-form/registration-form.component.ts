@@ -55,7 +55,7 @@ export class RegistrationFormComponent implements OnInit {
         this.nuevoRegistro.tipo = 0
         this.esEmpresa = true
         this.hasLinkedin = true;
-        console.log(this.registrationDate)
+        //console.log(this.registrationDate)
         break;
       case 1:
         this.nuevoRegistro.tipo = 1
@@ -101,7 +101,7 @@ export class RegistrationFormComponent implements OnInit {
       this._registration.create(this.nuevoRegistro);
       this.sent = true;
     } else {
-      console.log('error')
+      //console.log('error')
     }
   }
   resetValidationErrors(){

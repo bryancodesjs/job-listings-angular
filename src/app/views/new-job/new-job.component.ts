@@ -207,28 +207,28 @@ export class NewJobComponent implements OnInit {
   chooseContactMethod(str: string){
     switch(str){
       case 'email':
-        console.log('you chose email')
+        //console.log('you chose email')
         this.emailChosen = true;
         this.phoneChosen = false;
         this.currentJob.link = '';
         this.currentJob.phone = '';
         break;
       case 'link':
-        console.log('you chose link')
+        //console.log('you chose link')
         this.emailChosen = false;
         this.phoneChosen = false;
         this.currentJob.email = '';
         this.currentJob.phone = '';
         break;
       case 'telefono':
-        console.log('you chose telephone')
+        //console.log('you chose telephone')
         this.emailChosen = false;
         this.phoneChosen = true;
         this.currentJob.link = '';
         this.currentJob.email = '';
         break;
       default:
-        console.log('default')
+        //console.log('default')
         this.emailChosen = false;
         this.phoneChosen = false;
         this.currentJob.link = '';
