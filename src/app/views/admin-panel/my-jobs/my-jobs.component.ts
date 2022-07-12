@@ -14,7 +14,19 @@ export class MyJobsComponent implements OnInit {
   //job in memory for updates
   jobInMemory: any = []
 
+  requirementsInMemory: any[] = [];
+  BenefitsInMemory: any[] = [];
   deleted = false;
+
+  newBenefit = '';
+  singleBenefit = {
+    name: ''
+  }
+  //states for requirements
+  newRequirement = '';
+  singleRequirement = {
+    name: ''
+  }
 
   constructor(private _JobService: JobServiceService) { }
 
@@ -65,9 +77,26 @@ export class MyJobsComponent implements OnInit {
     }
   }
   showModal = false;
+  
   deleteJob(job: any){
     this.jobInMemory = job
     this.showModal = true;
+  }
+  
+  showEditModal = false;
+  
+  editJob(job:any){
+    this.jobInMemory = job;
+    this.showEditModal = true;
+    //place job requirements to requirementsInMemory
+    this.requirementsInMemory = job.requirements;
+    //place job benefits in BenefitsInMemory
+    this.BenefitsInMemory = job.benefits;
+  }
+  closeEditModal(){
+    this.showEditModal = false;
+    this.jobInMemory = [];
+    this.jobSent = false;
   }
   confirmDelete(){
     this.jobInMemory.status = false;
@@ -78,5 +107,42 @@ export class MyJobsComponent implements OnInit {
   hideModal(){
     this.showModal = false;
     this.deleted = false;
+  }
+  //remover beneficio
+  removeBenefit(index: number){
+    this.BenefitsInMemory.splice(index, 1);
+  }
+
+  addBenefit(){
+    if(this.newBenefit != ''){
+      this.singleBenefit.name = this.newBenefit;
+      this.newBenefit = ''; //reset new benefit
+      this.BenefitsInMemory.push(this.singleBenefit);
+      this.singleBenefit = {name: ''}; //reset single benefit
+    }
+  }
+
+  //add requirement
+  addRequirement(){
+    if(this.newRequirement != ''){
+      this.singleRequirement.name = this.newRequirement;
+      this.newRequirement = ''; //reset new requirement
+      this.requirementsInMemory.push(this.singleRequirement);
+      this.singleRequirement = {name: ''}; //reset single requirement
+    }
+  }
+  //remove a requirement from memory
+  removeRequirement(index: number){
+    this.requirementsInMemory.splice(index, 1);
+  }
+  jobSent = false;
+  //publish new job
+  update(){
+    //add publication date
+    this.jobInMemory.requirements = this.requirementsInMemory;
+    this.jobInMemory.benefits = this.BenefitsInMemory;
+    this._JobService.update(this.jobInMemory.key, this.jobInMemory);
+    this.jobSent = true;
+    console.log('job updated');
   }
 }

@@ -2,3 +2,11 @@
     width: 100%px;
     height: 200px;
 }
+.edit-modal {
+    overflow-y: scroll;
+    padding-bottom: 20px;
+    .modal-content {
+        position: absolute;
+        top: 40px;
+    }
+}

@@ -33,6 +33,7 @@
                 <br>
                 <div class="btn-group btn-group-sm mb-3" role="group" aria-label="Basic outlined example">
                     <!-- <button type="button" class="btn btn-outline-primary">Editar</button> -->
+                    <button (click)="editJob(job)" type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">Editar</button>
                     <button (click)="deleteJob(job)" type="button" class="btn btn-outline-danger">Eliminar</button>
                 </div>
             </div>
@@ -41,7 +42,7 @@
 </div>
 
 <div [class]="showModal? 'modal-bg' : 'modal-bg d-none'">
-    <div class="modal-content animate__animated animate__fadeInUp">
+    <div class="modal-content">
         <div class="card">
             <!-- if the job hasn't been deleted -->
             <div class="card-body" *ngIf="!deleted">
@@ -62,6 +63,171 @@
                     <button (click)="hideModal()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for editing a job entry -->
+<div [class]="showEditModal? 'modal-bg edit-modal' : 'modal-bg d-none'">
+    <div class="modal-content bg-light">
+        <div class="modal-header">
+            <h5 *ngIf="!jobSent" class="modal-title" id="editModalLabel"><strong>Editar vacante</strong></h5>
+            <h5 *ngIf="jobSent"><strong>La vacante ha sido actualizada</strong></h5>
+            <button (click)="closeEditModal()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" *ngIf="!jobSent">
+            <!-- titulo -->
+            <div class="form-group mb-3">
+                <label for=""><strong>Titulo de Posición</strong></label>
+                <input [(ngModel)]="jobInMemory.title" type="text" class="form-control" > <!-- value="{{jobInMemory.title}}" -->
+            </div>
+            <!-- categoria -->
+            <div class="form-group mb-3">
+                <label><strong>Categoría</strong></label>
+                <select [(ngModel)]="jobInMemory.category" class="form-select">
+                    <option value="{{jobInMemory.category}}" selected>{{jobInMemory.category}}</option>
+                    <option value="Belleza">Belleza</option>
+                    <option value="Cajer@">Cajer@</option>
+                    <option value="Construcción">Construcción</option>
+                    <option value="Contabilidad / Finanzas">Contabilidad / Finanzas</option>
+                    <option value="Diseño">Diseño</option>
+                    <option value="Doméstica / Ama de casa">Doméstica / Ama de casa</option>
+                    <option value="Gerencia / Administración">Gerencia / Administración</option>
+                    <option value="Hotelería / Gastronomía / Turismo">Hotelería / Gastronomía / Turismo</option>
+                    <option value="IT / Devops">IT / Devops</option>
+                    <option value="Logística / Almacén">Logística / Almacén</option>
+                    <option value="Mecánica">Mecánica</option>
+                    <option value="Manufactura / Industria">Manufactura / Industria</option>
+                    <option value="Medicina / Salud">Medicina / Salud</option>
+                    <option value="Mantenimiento / Limpieza">Mantenimiento / Limpieza</option>
+                    <option value="Marketing / Ventas">Marketing / Ventas</option>
+                    <option value="RRHH">RRHH</option>
+                    <option value="Seguridad">Seguridad</option>
+                    <option value="Servicio al Cliente">Servicio al Cliente</option>
+                    <option value="Software">Software</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Otros">Otros</option>
+                </select>
+            </div>
+            <div class="form-group mb-3">
+                <label for=""><strong>Horario</strong></label>
+                <select [(ngModel)]="jobInMemory.type" name="" id="" class="form-select">
+                    <option value="{{jobInMemory.type}}" selected>{{jobInMemory.type}}</option>
+                    <option value="Tiempo Completo">Tiempo Completo</option>
+                    <option value="Medio Tiempo">Medio Tiempo</option>
+                    <option value="Freelance">Freelance</option>
+                    <option value="Contrato">Contrato</option>
+                    <option value="Varios / Flexible">Varios / Flexible</option>
+                </select>
+            </div>
+            <div class="form-group mb-3">
+                <label for=""><strong>Compañía</strong></label>
+                <input [(ngModel)]="jobInMemory.company" type="text" class="form-control">
+            </div>
+            <div class="form-group mb-3">
+                <label for=""><strong>¿Esta posición es remota?</strong></label>
+                <div class="row" *ngIf="jobInMemory.isremote">
+                    <div class="col-sm-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="isremote" checked>
+                            <label class="form-check-label" for="isremote">
+                            Si
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="isnotremote">
+                            <label class="form-check-label" for="isnotremote">
+                            No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" *ngIf="!jobInMemory.isremote">
+                    <div class="col-sm-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="isremote">
+                            <label class="form-check-label" for="isremote">
+                            Si
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="isnotremote" checked>
+                            <label class="form-check-label" for="isnotremote">
+                            No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label><strong>Ubicación</strong></label>
+                <select class="form-select"> <!-- [class]="noLocation? 'form-select is-invalid':'form-select'" -->
+                    <option value="{{jobInMemory.location}}" selected>{{jobInMemory.location}}</option>
+                    <option value="Distrito Nacional" >Distrito Nacional</option>
+                    <option value="Santo Domingo Este">Santo Domingo Este</option>
+                    <option value="Santo Domingo Norte">Santo Domingo Norte</option>
+                    <option value="Santo Domingo Oeste">Santo Domingo Oeste</option>
+                    <option value="Barahona">Barahona</option>
+                    <option value="Bavaro">Bavaro</option>
+                    <option value="La Altagracia">La Altagracia</option>
+                    <option value="La Romana">La Romana</option>
+                    <option value="La Vega">La Vega</option>
+                    <option value="Puerto Plata">Puerto Plata</option>
+                    <option value="San Cristobal">San Cristobal</option>
+                    <option value="San Pedro de Macorís">San Pedro de Macorís</option>
+                    <option value="Santiago">Santiago</option>
+                    <option value="Otro">Otro</option>
+                </select>
+                <!-- <label *ngIf="noLocation" class="danger">Recuerde agregar una ubicación</label> -->
+            </div>
+            <div class="form-group mb-3">
+                <label><strong>Descripción del puesto</strong></label>
+                <textarea class="form-control" cols="30" rows="10" value="{{jobInMemory.description}}"></textarea>
+            </div>
+            <hr>
+            <div class="form-group mb-3">
+                <label><strong>Requisitos del puesto</strong></label>
+                <div class="input-group">
+                    <input (keyup.enter)="addRequirement()" [(ngModel)]="newRequirement" type="text" class="form-control">
+                    <button (click)="addRequirement()" class="btn btn-sm secondary"><span class="hide-sm">Agregar </span> <i class="bi bi-plus-lg"></i></button>
+                </div>
+                <!-- list of requirements -->
+                <ul class="list-group list-group-flush mt-3">
+                    <li *ngFor="let req of requirementsInMemory , let i = index" class="list-group-item"><small>{{req.name}} </small>
+                        <span class="ms-4">
+                            <span class="round-btn danger" (click)="removeRequirement(i)">
+                                <i class="bi bi-x"></i>
+                            </span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+            <div class="form-group mb-3">
+                <label><strong>Beneficios</strong></label>
+                <div class="input-group">
+                    <input (keyup.enter)="addBenefit()" [(ngModel)]="newBenefit" type="text" class="form-control">
+                    <button (click)="addBenefit()" class="btn btn-sm secondary"><span class="hide-sm">Agregar </span> <i class="bi bi-plus-lg"></i></button>
+                </div>
+                <!-- list of requirements -->
+                <ul class="list-group list-group-flush mt-3">
+                    <li *ngFor="let ben of BenefitsInMemory, let i = index" class="list-group-item">{{ben.name}} 
+                        <span class="ms-4" (click)="removeBenefit(i)">
+                            <span class="round-btn danger">
+                                <i class="bi bi-x"></i>
+                            </span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="modal-footer" *ngIf="!jobSent">
+            <button (click)="closeEditModal()" class="btn btn-secondary">Cancelar</button>
+            <button (click)="update()" type="button" class="btn btn-primary">Guardar cambios</button>
         </div>
     </div>
 </div>
